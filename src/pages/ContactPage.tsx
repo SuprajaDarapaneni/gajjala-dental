@@ -8,12 +8,12 @@ export default function ContactPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-24"
+      className="pt-0"
     >
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-primary text-white pt-32 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Our Locations</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
             Visit us at our Narasaraopet or Sattenepalli branches for world-class dental care.
           </p>
         </div>

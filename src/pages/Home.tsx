@@ -48,23 +48,23 @@ export default function Home() {
       <div className="bg-accent py-16 border-y border-primary/10">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-slate-900">
-            <div className="flex items-center gap-5 bg-white p-6 rounded-3xl shadow-sm border border-primary/5">
+            <div className="flex items-center gap-5 bg-white p-6 rounded-3xl border border-primary/5">
               <span className="text-5xl font-bold text-primary">10+</span>
               <span className="text-xs uppercase tracking-[0.2em] font-bold text-slate-500 leading-relaxed">Years of<br />Excellence</span>
             </div>
-            <div className="flex items-center gap-5 bg-white p-6 rounded-3xl shadow-sm border border-primary/5">
+            <div className="flex items-center gap-5 bg-white p-6 rounded-3xl border border-primary/5">
               <span className="text-5xl font-bold text-primary">3k+</span>
               <span className="text-xs uppercase tracking-[0.2em] font-bold text-slate-500 leading-relaxed">Happy<br />Smiles</span>
             </div>
-            <div className="lg:col-span-2 flex flex-col justify-center bg-white p-6 rounded-3xl shadow-sm border border-primary/5">
+            <div className="lg:col-span-2 flex flex-col justify-center bg-white p-6 rounded-3xl border border-primary/5">
               <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-primary mb-3">Our Branches</p>
               <div className="flex flex-wrap gap-6">
                 <div className="flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(14,165,233,0.5)]"></div>
+                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse"></div>
                   <span className="font-bold text-slate-800">Narasaraopet (Palnadu Bus Stand)</span>
                 </div>
                 <div className="flex items-center gap-3">
-                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse shadow-[0_0_10px_rgba(14,165,233,0.5)]"></div>
+                  <div className="w-2.5 h-2.5 bg-primary rounded-full animate-pulse"></div>
                   <span className="font-bold text-slate-800">Sattenepalli</span>
                 </div>
               </div>
@@ -84,8 +84,8 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {equipment.map((item, i) => (
-              <div key={i} className="bg-white p-10 rounded-[2rem] shadow-sm border border-slate-100 hover:border-primary/30 hover:shadow-xl transition-all duration-500 group">
-                <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500 shadow-inner">
+              <div key={i} className="bg-white p-10 rounded-[2rem] border border-slate-100 hover:border-primary/30 transition-all duration-500 group">
+                <div className="w-16 h-16 bg-primary/5 rounded-2xl flex items-center justify-center text-primary mb-8 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <item.icon className="w-8 h-8" />
                 </div>
                 <h4 className="text-2xl font-bold mb-3 text-slate-900">{item.name}</h4>
@@ -114,7 +114,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {reviews.map((review, i) => (
-              <Card key={i} className="border-none shadow-lg bg-slate-50 relative overflow-hidden">
+              <Card key={i} className="border-none bg-slate-50 relative overflow-hidden">
                 <CardContent className="p-8">
                   <Quote className="absolute top-6 right-8 w-12 h-12 text-primary/10" />
                   <div className="flex text-yellow-400 mb-4">
@@ -158,7 +158,7 @@ export default function Home() {
               </div>
             </div>
             <div className="relative">
-              <div className="aspect-square rounded-[3rem] overflow-hidden shadow-2xl border-8 border-slate-50">
+              <div className="aspect-square rounded-[3rem] overflow-hidden border-8 border-slate-50">
                 <img 
                   src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop" 
                   alt="Dental Technology" 
@@ -166,7 +166,7 @@ export default function Home() {
                   referrerPolicy="no-referrer"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-10 rounded-3xl shadow-2xl border border-slate-100 hidden md:block">
+              <div className="absolute -bottom-6 -left-6 bg-white p-10 rounded-3xl border border-slate-100 hidden md:block">
                 <p className="text-5xl font-bold mb-1 text-primary">99%</p>
                 <p className="text-sm font-bold text-slate-500 uppercase tracking-widest">Patient Satisfaction</p>
               </div>

@@ -7,11 +7,11 @@ export default function About() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-24"
+      className="pt-0"
     >
       {/* Hero Section */}
-      <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+      <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-30">
           <img 
             src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" 
             alt="Hospital Interior" 
@@ -21,7 +21,7 @@ export default function About() {
         </div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">About Our Hospital</h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto">
+          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
             Gajjala Multispeciality Dental Hospital has been a pioneer in dental excellence in Guntur for over a decade.
           </p>
         </div>
@@ -35,7 +35,7 @@ export default function About() {
               <img 
                 src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=1974&auto=format&fit=crop" 
                 alt="Our Mission" 
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl border border-slate-100"
                 referrerPolicy="no-referrer"
               />
             </div>
@@ -73,7 +73,7 @@ export default function About() {
               { icon: Heart, title: 'Compassion', desc: 'Treating every patient with kindness and empathy.' },
               { icon: Target, title: 'Innovation', desc: 'Constantly adopting new technologies and techniques.' }
             ].map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow text-center">
+              <div key={i} className="bg-white p-8 rounded-2xl border border-slate-100 transition-shadow text-center">
                 <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center text-primary mx-auto mb-6">
                   <item.icon className="w-8 h-8" />
                 </div>
@@ -88,7 +88,7 @@ export default function About() {
       {/* Founder Message */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden shadow-2xl flex flex-col md:flex-row">
+          <div className="max-w-4xl mx-auto bg-slate-900 rounded-3xl overflow-hidden flex flex-col md:flex-row">
             <div className="md:w-1/3">
               <img 
                 src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=2070&auto=format&fit=crop" 

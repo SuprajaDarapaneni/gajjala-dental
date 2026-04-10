@@ -9,26 +9,25 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="space-y-6">
             <Link to="/" className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">G</div>
+              <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl">G</div>
               <div className="flex flex-col">
-                <span className="font-heading font-bold text-xl leading-tight tracking-tight">Gajjala <span className="text-primary">Multispeciality</span></span>
-                <span className="text-[10px] uppercase tracking-[0.2em] font-bold text-slate-500">Dental Hospital</span>
+                <span className="font-heading font-bold text-xl leading-tight tracking-tight">Gajjala <span className="text-primary">Multispeciality Dental Hospital</span></span>
               </div>
             </Link>
             <p className="text-slate-500 leading-relaxed">
               Providing high-quality dental care with a personal touch. Our mission is to give you a healthy, beautiful smile that lasts a lifetime.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Instagram className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Twitter className="w-5 h-5" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all shadow-sm">
+              <a href="#" className="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center hover:bg-primary hover:text-white transition-all">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
@@ -63,9 +62,9 @@ export default function Footer() {
               <input 
                 type="email" 
                 placeholder="Your email" 
-                className="bg-white border border-slate-200 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-primary outline-none shadow-sm"
+                className="bg-white border border-slate-200 rounded-lg px-4 py-2 w-full focus:ring-2 focus:ring-primary outline-none"
               />
-              <button className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors font-bold shadow-md">
+              <button className="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg transition-colors font-bold">
                 Join
               </button>
             </div>

@@ -51,7 +51,7 @@ export default function Contact() {
             </div>
           </div>
 
-          <Card className="border-none shadow-2xl bg-slate-50">
+          <Card className="border-none bg-slate-50">
             <CardContent className="p-8 md:p-12">
               <h3 className="text-2xl font-bold text-slate-900 mb-8">Quick Appointment</h3>
               <form className="space-y-6">

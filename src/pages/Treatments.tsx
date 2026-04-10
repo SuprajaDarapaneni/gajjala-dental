@@ -63,15 +63,15 @@ export default function Treatments() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-24"
+      className="pt-0"
     >
-      <section className="bg-slate-900 text-white py-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
+      <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" alt="bg" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Advanced Dental Treatments</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
             We combine clinical expertise with advanced technology to provide the best dental solutions in Guntur.
           </p>
         </div>
@@ -81,7 +81,7 @@ export default function Treatments() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {allTreatments.map((treatment, index) => (
-              <Card key={index} className="border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group">
+              <Card key={index} className="border-none transition-all duration-500 overflow-hidden group">
                 <div className="relative h-64 overflow-hidden">
                   <img 
                     src={treatment.image} 
@@ -90,7 +90,7 @@ export default function Treatments() {
                     referrerPolicy="no-referrer"
                   />
                   <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center text-primary shadow-lg">
+                    <div className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center text-primary">
                       <treatment.icon className="w-6 h-6" />
                     </div>
                   </div>
@@ -122,7 +122,7 @@ export default function Treatments() {
           <p className="text-slate-600 mb-10 max-w-2xl mx-auto">
             Schedule a comprehensive consultation with our experts. We'll examine your oral health and recommend the best course of action.
           </p>
-          <button className="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors shadow-lg">
+          <button className="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors">
             Book a Consultation
           </button>
         </div>

@@ -42,30 +42,31 @@ export default function Navbar() {
   ];
 
   const getHeaderStyle = () => {
-    if (isScrolled) return 'bg-white shadow-md py-2';
+    if (isScrolled) return 'bg-white py-2';
     if (isHomePage) return 'bg-transparent py-4';
-    return 'bg-white shadow-sm py-3';
+    return 'bg-primary py-3';
   };
 
   const getTextColor = () => {
-    return 'text-slate-700';
+    if (isScrolled) return 'text-slate-700';
+    if (isHomePage) return 'text-white';
+    return 'text-white';
   };
 
   const getLogoColor = () => {
-    return 'text-slate-900';
+    if (isScrolled) return 'text-slate-900';
+    if (isHomePage) return 'text-white';
+    return 'text-white';
   };
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getHeaderStyle()}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl shadow-lg">G</div>
+          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl">G</div>
           <div className="flex flex-col">
             <span className={`font-heading font-bold text-xl md:text-2xl leading-tight tracking-tight ${getLogoColor()}`}>
-              Gajjala <span className="text-primary">Multispeciality</span>
-            </span>
-            <span className={`text-[10px] md:text-xs uppercase tracking-[0.2em] font-bold ${isScrolled ? 'text-slate-500' : 'text-primary-foreground/80'}`}>
-              Dental Hospital
+              Gajjala Multispeciality Dental Hospital<span className="text-primary"> </span>
             </span>
           </div>
         </Link>
@@ -113,7 +114,7 @@ export default function Navbar() {
               {link.name}
             </Link>
           ))}
-          <Button className="rounded-full px-6 font-bold shadow-lg hover:shadow-primary/20">
+          <Button className="rounded-full px-6 font-bold">
             <Phone className="w-4 h-4 mr-2" />
             8897222959
           </Button>
@@ -121,12 +122,14 @@ export default function Navbar() {
 
         {/* Mobile Nav */}
         <div className="lg:hidden flex items-center gap-4">
-          <a href="tel:8897222959" className="p-2 bg-primary text-white rounded-full shadow-lg">
+          <a href="tel:8897222959" className="p-2 bg-primary text-white rounded-full">
             <Phone className="w-4 h-4" />
           </a>
           <Sheet>
-            <SheetTrigger render={<Button variant="ghost" size="icon" className={getLogoColor()} />}>
-              <Menu className="w-6 h-6" />
+            <SheetTrigger asChild>
+              <Button variant="ghost" size="icon" className={getLogoColor()}>
+                <Menu className="w-6 h-6" />
+              </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] sm:w-[400px]">
               <div className="flex flex-col gap-6 mt-12">

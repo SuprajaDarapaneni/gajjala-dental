@@ -39,7 +39,7 @@ export default function FAQ() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-24 min-h-screen bg-slate-50"
+      className="pt-20 min-h-screen bg-slate-50"
     >
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -51,7 +51,7 @@ export default function FAQ() {
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl p-8 md:p-12 shadow-sm">
+            <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100">
               <Accordion type="single" collapsible className="w-full">
                 {faqs.map((faq, index) => (
                   <AccordionItem key={index} value={`item-${index}`} className="border-slate-100 py-2">

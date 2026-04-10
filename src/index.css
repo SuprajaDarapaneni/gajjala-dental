@@ -5,12 +5,12 @@
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-heading: "Outfit", sans-serif;
   
-  --color-primary: #0ea5e9;
+  --color-primary: #312e81;
   --color-primary-foreground: #ffffff;
-  --color-secondary: #0284c7;
+  --color-secondary: #4338ca;
   --color-secondary-foreground: #ffffff;
-  --color-accent: #f0f9ff;
-  --color-accent-foreground: #0369a1;
+  --color-accent: #fef3c7;
+  --color-accent-foreground: #92400e;
   
   --radius-lg: 1rem;
   --radius-md: 0.75rem;

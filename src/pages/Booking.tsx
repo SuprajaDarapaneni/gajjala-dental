@@ -23,12 +23,12 @@ export default function Booking() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-24 min-h-screen bg-slate-50"
+      className="pt-0 min-h-screen bg-slate-50"
     >
-      <section className="bg-slate-900 text-white py-20">
+      <section className="bg-primary text-white pt-32 pb-20">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">Book Your Appointment</h1>
-          <p className="text-xl opacity-90 max-w-3xl mx-auto">
+          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
             Choose your preferred way to connect with our experts. We offer both online consultations and in-person visits.
           </p>
         </div>
@@ -38,10 +38,10 @@ export default function Booking() {
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
             <div className="flex justify-center mb-12">
-              <div className="bg-white p-1 rounded-full shadow-md flex">
+              <div className="bg-white p-1 rounded-full flex">
                 <button
                   onClick={() => setBookingType('online')}
-                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${bookingType === 'online' ? 'bg-primary text-white shadow-lg' : 'text-slate-600 hover:bg-slate-50'}`}
+                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${bookingType === 'online' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}`}
                 >
                   <div className="flex items-center gap-2">
                     <Globe className="w-4 h-4" />
@@ -50,7 +50,7 @@ export default function Booking() {
                 </button>
                 <button
                   onClick={() => setBookingType('offline')}
-                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${bookingType === 'offline' ? 'bg-primary text-white shadow-lg' : 'text-slate-600 hover:bg-slate-50'}`}
+                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${bookingType === 'offline' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}`}
                 >
                   <div className="flex items-center gap-2">
                     <MapPin className="w-4 h-4" />
@@ -62,7 +62,7 @@ export default function Booking() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
               <div className="lg:col-span-2">
-                <Card className="border-none shadow-2xl overflow-hidden">
+                <Card className="border-none overflow-hidden">
                   <CardContent className="p-8 md:p-12">
                     <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
                       {bookingType === 'online' ? <Globe className="text-primary" /> : <MapPin className="text-primary" />}
@@ -117,7 +117,7 @@ export default function Booking() {
                         </div>
                       </div>
 
-                      <Button className="w-full h-14 text-lg rounded-full shadow-lg hover:shadow-primary/20 transition-all">
+                      <Button className="w-full h-14 text-lg rounded-full transition-all">
                         Confirm {bookingType === 'online' ? 'Online' : 'Offline'} Booking
                       </Button>
                     </form>
@@ -126,7 +126,7 @@ export default function Booking() {
               </div>
 
               <div className="space-y-8">
-                <Card className="border-none shadow-xl bg-primary text-white">
+                <Card className="border-none bg-primary text-white">
                   <CardContent className="p-8">
                     <h3 className="text-xl font-bold mb-6">Why Book with Us?</h3>
                     <ul className="space-y-4">
@@ -146,7 +146,7 @@ export default function Booking() {
                   </CardContent>
                 </Card>
 
-                <Card className="border-none shadow-xl">
+                <Card className="border-none">
                   <CardContent className="p-8">
                     <h3 className="text-xl font-bold text-slate-900 mb-6">Need Help?</h3>
                     <div className="space-y-6">

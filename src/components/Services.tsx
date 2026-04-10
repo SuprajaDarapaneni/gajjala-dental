@@ -60,7 +60,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-slate-100 overflow-hidden">
+            <Card key={index} className="group transition-all duration-300 border-slate-100 overflow-hidden">
               <CardContent className="p-8">
                 <div className={`w-14 h-14 rounded-2xl ${service.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
                   <service.icon className="w-7 h-7" />

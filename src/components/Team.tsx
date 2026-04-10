@@ -49,7 +49,7 @@ export default function Team() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {doctors.map((doctor, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group bg-white">
+            <Card key={index} className="border-none transition-all duration-500 overflow-hidden group bg-white">
               <CardContent className="p-8 text-center">
                 <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   <span className="text-2xl font-bold">{doctor.name.split(' ').pop()?.charAt(0)}</span>
