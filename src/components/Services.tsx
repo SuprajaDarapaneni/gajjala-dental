@@ -1,4 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card';
+import { Link } from 'react-router-dom';
 import { 
   Stethoscope, 
   ShieldCheck, 
@@ -68,9 +69,9 @@ export default function Services() {
                 <p className="text-slate-600 mb-6 leading-relaxed">
                   {service.description}
                 </p>
-                <a href="#" className="inline-flex items-center text-sm font-bold text-primary hover:gap-2 transition-all">
+                <Link to="/treatments" className="inline-flex items-center text-sm font-bold text-primary hover:gap-2 transition-all">
                   Learn More <ChevronRight className="w-4 h-4 ml-1" />
-                </a>
+                </Link>
               </CardContent>
             </Card>
           ))}

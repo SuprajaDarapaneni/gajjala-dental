@@ -49,31 +49,17 @@ export default function Team() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {doctors.map((doctor, index) => (
-            <Card key={index} className="border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group">
-              <div className="relative h-80 overflow-hidden">
-                <img 
-                  src={doctor.image} 
-                  alt={doctor.name} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6 gap-4">
-                  <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary transition-colors">
-                    <Linkedin className="w-5 h-5" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-md text-white flex items-center justify-center hover:bg-primary transition-colors">
-                    <Mail className="w-5 h-5" />
-                  </button>
+            <Card key={index} className="border-none shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden group bg-white">
+              <CardContent className="p-8 text-center">
+                <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                  <span className="text-2xl font-bold">{doctor.name.split(' ').pop()?.charAt(0)}</span>
                 </div>
-              </div>
-              <CardContent className="p-6 text-center">
                 <h3 className="text-xl font-bold text-slate-900 mb-1">{doctor.name}</h3>
-                <p className="text-primary font-semibold text-sm mb-3">{doctor.qualification}</p>
-                <div className="flex items-center justify-center gap-2">
-                  <Badge variant="secondary" className="bg-slate-100 text-slate-600 font-medium">
-                    {doctor.role}
-                  </Badge>
-                </div>
+                <p className="text-primary font-bold text-sm mb-4">{doctor.qualification}</p>
+                <Badge variant="secondary" className="bg-slate-50 text-slate-600 font-bold px-4 py-1">
+                  {doctor.role}
+                </Badge>
+                <p className="text-xs text-slate-400 mt-4 font-medium uppercase tracking-wider">{doctor.specialty}</p>
               </CardContent>
             </Card>
           ))}
