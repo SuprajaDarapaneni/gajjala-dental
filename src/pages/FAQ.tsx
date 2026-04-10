@@ -39,26 +39,36 @@ export default function FAQ() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="pt-20 min-h-screen bg-slate-50"
+      className="pt-0 min-h-screen bg-white"
     >
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-16">
-              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Frequently Asked Questions</h1>
-              <p className="text-slate-600 text-lg">
-                Find answers to common questions about dental care and our hospital services.
-              </p>
-            </div>
+      {/* Hero Section */}
+      <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="text-5xl md:text-7xl font-bold mb-6 italic"
+          >
+            Curated Wisdom
+          </motion.h1>
+          <p className="text-xl text-accent max-w-3xl mx-auto font-light tracking-widest uppercase">
+            Answers to Your Dental Queries
+          </p>
+        </div>
+      </section>
 
-            <div className="bg-white rounded-3xl p-8 md:p-12 border border-slate-100">
-              <Accordion type="single" collapsible className="w-full">
+      <section className="py-32">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="space-y-12">
+              <Accordion type="single" collapsible className="w-full space-y-6">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border-slate-100 py-2">
-                    <AccordionTrigger className="text-left font-bold text-lg text-slate-900 hover:text-primary transition-colors">
+                  <AccordionItem key={index} value={`item-${index}`} className="border-0 bg-slate-50 px-8 py-4 group">
+                    <AccordionTrigger className="text-left font-bold text-2xl text-primary hover:text-accent transition-all duration-500 italic no-underline hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-slate-600 text-base leading-relaxed pt-4">
+                    <AccordionContent className="text-slate-600 text-lg leading-relaxed pt-6 font-light border-t border-slate-200 mt-4">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>
@@ -66,16 +76,24 @@ export default function FAQ() {
               </Accordion>
             </div>
 
-            <div className="mt-16 text-center bg-primary/5 rounded-2xl p-8 border border-primary/10">
-              <h3 className="text-xl font-bold text-slate-900 mb-2">Still have questions?</h3>
-              <p className="text-slate-600 mb-6">Our team is here to help you with any queries you might have.</p>
-              <a 
-                href="tel:8897222959" 
-                className="inline-flex items-center justify-center bg-primary text-white px-8 py-3 rounded-full font-bold hover:bg-primary/90 transition-colors"
-              >
-                Call Us Now
-              </a>
-            </div>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="mt-32 text-center bg-primary p-12 md:p-20 relative overflow-hidden"
+            >
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 blur-[100px] rounded-full -mr-32 -mt-32"></div>
+              <div className="relative z-10">
+                <h3 className="text-3xl md:text-4xl font-bold text-white mb-6 italic">Still Seeking Clarity?</h3>
+                <p className="text-indigo-100/60 mb-12 text-xl font-light">Our concierge team is available to assist with any bespoke inquiries.</p>
+                <a 
+                  href="tel:8897222959" 
+                  className="inline-flex items-center justify-center bg-accent text-primary px-12 py-5 text-sm uppercase tracking-widest font-bold hover:bg-white transition-all duration-500"
+                >
+                  Speak with an Expert
+                </a>
+              </div>
+            </motion.div>
           </div>
         </div>
       </section>

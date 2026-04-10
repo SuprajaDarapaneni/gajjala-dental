@@ -7,6 +7,7 @@ import Treatments from './pages/Treatments';
 import FAQ from './pages/FAQ';
 import ContactPage from './pages/ContactPage';
 import Booking from './pages/Booking';
+import Equipment from './pages/Equipment';
 import { motion, useScroll, useSpring, AnimatePresence } from 'motion/react';
 import { MessageCircle, ArrowUp } from 'lucide-react';
 import { useState, useEffect } from 'react';
@@ -56,6 +57,7 @@ function AppContent() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/booking" element={<Booking />} />
+          <Route path="/equipment" element={<Equipment />} />
         </Routes>
       </AnimatePresence>
 

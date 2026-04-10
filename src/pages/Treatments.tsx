@@ -1,5 +1,7 @@
 import { motion } from 'motion/react';
 import { Card, CardContent } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { 
   Stethoscope, 
   Activity, 
@@ -66,65 +68,83 @@ export default function Treatments() {
       className="pt-0"
     >
       <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20">
+        <div className="absolute inset-0 opacity-20 grayscale">
           <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" alt="bg" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Advanced Dental Treatments</h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
-            We combine clinical expertise with advanced technology to provide the best dental solutions in Guntur.
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="text-5xl md:text-7xl font-bold mb-6 italic"
+          >
+            Clinical Artistry
+          </motion.h1>
+          <p className="text-xl text-accent max-w-3xl mx-auto font-light tracking-widest uppercase">
+            Advanced Dental Solutions in Narasaraopet
           </p>
         </div>
       </section>
 
-      <section className="py-24 bg-white">
+      <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16">
             {allTreatments.map((treatment, index) => (
-              <Card key={index} className="border-none transition-all duration-500 overflow-hidden group">
-                <div className="relative h-64 overflow-hidden">
-                  <img 
-                    src={treatment.image} 
-                    alt={treatment.title} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <div className="w-12 h-12 bg-white/90 backdrop-blur-md rounded-xl flex items-center justify-center text-primary">
-                      <treatment.icon className="w-6 h-6" />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+              >
+                <Card className="border-none transition-all duration-500 overflow-hidden group rounded-none bg-slate-50">
+                  <div className="relative h-72 overflow-hidden">
+                    <img 
+                      src={treatment.image} 
+                      alt={treatment.title} 
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div className="absolute top-6 left-6">
+                      <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center text-primary group-hover:rotate-12 transition-transform duration-500">
+                        <treatment.icon className="w-7 h-7" />
+                      </div>
                     </div>
                   </div>
-                </div>
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-4">{treatment.title}</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    {treatment.description}
-                  </p>
-                  <div className="space-y-3">
-                    {treatment.details.map((detail, i) => (
-                      <div key={i} className="flex items-center gap-3 text-slate-700 font-medium text-sm">
-                        <div className="w-2 h-2 bg-primary rounded-full"></div>
-                        {detail}
-                      </div>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-10">
+                    <h3 className="text-3xl font-bold text-primary mb-6 italic">{treatment.title}</h3>
+                    <p className="text-slate-500 mb-8 leading-relaxed font-light">
+                      {treatment.description}
+                    </p>
+                    <div className="space-y-4 border-t border-slate-200 pt-8">
+                      {treatment.details.map((detail, i) => (
+                        <div key={i} className="flex items-center gap-4 text-slate-700 font-bold text-xs uppercase tracking-widest">
+                          <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
+                          {detail}
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-slate-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Not sure which treatment you need?</h2>
-          <p className="text-slate-600 mb-10 max-w-2xl mx-auto">
-            Schedule a comprehensive consultation with our experts. We'll examine your oral health and recommend the best course of action.
-          </p>
-          <button className="bg-primary text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-primary/90 transition-colors">
-            Book a Consultation
-          </button>
+      <section className="py-32 bg-primary text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <div className="max-w-3xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-bold mb-8 italic">Bespoke Treatment Plans</h2>
+            <p className="text-indigo-100/60 mb-12 text-xl font-light leading-relaxed">
+              Schedule a comprehensive consultation with our experts. We'll examine your oral health and recommend the best course of action.
+            </p>
+            <Button asChild size="lg" className="rounded-none px-12 h-16 text-sm uppercase tracking-widest font-bold bg-accent text-primary hover:bg-white transition-all duration-500">
+              <Link to="/booking">Book a Consultation</Link>
+            </Button>
+          </div>
         </div>
       </section>
     </motion.div>

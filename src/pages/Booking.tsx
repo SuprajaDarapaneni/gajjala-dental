@@ -25,99 +25,106 @@ export default function Booking() {
       exit={{ opacity: 0 }}
       className="pt-0 min-h-screen bg-slate-50"
     >
-      <section className="bg-primary text-white pt-32 pb-20">
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Book Your Appointment</h1>
-          <p className="text-xl text-indigo-100 max-w-3xl mx-auto">
-            Choose your preferred way to connect with our experts. We offer both online consultations and in-person visits.
+      <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-full h-full opacity-5 pointer-events-none bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
+          <motion.h1 
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            className="text-5xl md:text-7xl font-bold mb-6 italic"
+          >
+            Reserve Your Visit
+          </motion.h1>
+          <p className="text-xl text-accent max-w-3xl mx-auto font-light tracking-widest uppercase">
+            Experience the Gajjala Distinction
           </p>
         </div>
       </section>
 
-      <section className="py-24">
+      <section className="py-32">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="flex justify-center mb-12">
-              <div className="bg-white p-1 rounded-full flex">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex justify-center mb-16">
+              <div className="bg-white p-2 border border-slate-100 flex">
                 <button
                   onClick={() => setBookingType('online')}
-                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${bookingType === 'online' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                  className={`px-10 py-4 text-xs font-bold uppercase tracking-widest transition-all duration-500 ${bookingType === 'online' ? 'bg-primary text-white' : 'text-slate-400 hover:text-primary'}`}
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-3">
                     <Globe className="w-4 h-4" />
                     Online Booking
                   </div>
                 </button>
                 <button
                   onClick={() => setBookingType('offline')}
-                  className={`px-8 py-3 rounded-full text-sm font-bold transition-all ${bookingType === 'offline' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}`}
+                  className={`px-10 py-4 text-xs font-bold uppercase tracking-widest transition-all duration-500 ${bookingType === 'offline' ? 'bg-primary text-white' : 'text-slate-400 hover:text-primary'}`}
                 >
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-3">
                     <MapPin className="w-4 h-4" />
-                    Offline / Visit
+                    In-Person Visit
                   </div>
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-24">
               <div className="lg:col-span-2">
-                <Card className="border-none overflow-hidden">
-                  <CardContent className="p-8 md:p-12">
-                    <h2 className="text-2xl font-bold text-slate-900 mb-8 flex items-center gap-3">
-                      {bookingType === 'online' ? <Globe className="text-primary" /> : <MapPin className="text-primary" />}
+                <Card className="border-none bg-white rounded-none p-4 relative overflow-hidden">
+                  <CardContent className="p-8 md:p-16">
+                    <h2 className="text-3xl font-bold text-primary mb-12 italic flex items-center gap-4">
+                      {bookingType === 'online' ? <Globe className="text-accent w-8 h-8" /> : <MapPin className="text-accent w-8 h-8" />}
                       {bookingType === 'online' ? 'Schedule Online Consultation' : 'Book In-Person Visit'}
                     </h2>
                     
-                    <form className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">Full Name</Label>
+                    <form className="space-y-10">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div className="space-y-3">
+                          <Label htmlFor="name" className="text-xs uppercase tracking-widest font-bold text-slate-400">Full Name</Label>
                           <div className="relative">
-                            <User className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                            <Input id="name" placeholder="Enter your name" className="pl-10 h-12" />
+                            <User className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-accent" />
+                            <Input id="name" placeholder="Enter your name" className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" />
                           </div>
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">Phone Number</Label>
+                        <div className="space-y-3">
+                          <Label htmlFor="phone" className="text-xs uppercase tracking-widest font-bold text-slate-400">Phone Number</Label>
                           <div className="relative">
-                            <Phone className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                            <Input id="phone" placeholder="+91 00000 00000" className="pl-10 h-12" />
+                            <Phone className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-accent" />
+                            <Input id="phone" placeholder="+91 00000 00000" className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" />
                           </div>
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="space-y-2">
-                          <Label htmlFor="date">Preferred Date</Label>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+                        <div className="space-y-3">
+                          <Label htmlFor="date" className="text-xs uppercase tracking-widest font-bold text-slate-400">Preferred Date</Label>
                           <div className="relative">
-                            <CalendarIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
-                            <Input id="date" type="date" className="pl-10 h-12" />
+                            <CalendarIcon className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-accent" />
+                            <Input id="date" type="date" className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" />
                           </div>
                         </div>
-                        <div className="space-y-2">
-                          <Label htmlFor="branch">Select Branch</Label>
-                          <select id="branch" className="w-full h-12 px-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                        <div className="space-y-3">
+                          <Label htmlFor="branch" className="text-xs uppercase tracking-widest font-bold text-slate-400">Select Branch</Label>
+                          <select id="branch" className="w-full h-14 px-0 rounded-none border-0 border-b border-slate-200 bg-transparent text-sm focus:outline-none focus:border-primary transition-colors appearance-none font-bold text-primary">
                             <option>Narasaraopet (Palnadu Bus Stand)</option>
                             <option>Sattenepalli</option>
                           </select>
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="message">Reason for Visit</Label>
+                      <div className="space-y-3">
+                        <Label htmlFor="message" className="text-xs uppercase tracking-widest font-bold text-slate-400">Reason for Visit</Label>
                         <div className="relative">
-                          <MessageSquare className="absolute left-3 top-3 w-4 h-4 text-slate-400" />
+                          <MessageSquare className="absolute left-0 top-4 w-4 h-4 text-accent" />
                           <textarea 
                             id="message" 
                             rows={4} 
-                            className="w-full pl-10 p-3 rounded-md border border-slate-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+                            className="w-full pl-8 p-3 h-32 border-0 border-b border-slate-200 rounded-none focus:outline-none focus:border-primary transition-colors bg-transparent text-sm font-light leading-relaxed"
                             placeholder="Briefly describe your dental concern..."
                           ></textarea>
                         </div>
                       </div>
 
-                      <Button className="w-full h-14 text-lg rounded-full transition-all">
+                      <Button className="w-full h-16 text-sm uppercase tracking-widest font-bold rounded-none bg-primary text-white hover:bg-accent hover:text-primary transition-all duration-500">
                         Confirm {bookingType === 'online' ? 'Online' : 'Offline'} Booking
                       </Button>
                     </form>
@@ -125,52 +132,51 @@ export default function Booking() {
                 </Card>
               </div>
 
-              <div className="space-y-8">
-                <Card className="border-none bg-primary text-white">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold mb-6">Why Book with Us?</h3>
-                    <ul className="space-y-4">
-                      {[
-                        'Instant Confirmation',
-                        'Expert Specialists',
-                        'Minimal Waiting Time',
-                        'Modern Equipment',
-                        'Transparent Pricing'
-                      ].map((item, i) => (
-                        <li key={i} className="flex items-center gap-3">
-                          <CheckCircle2 className="w-5 h-5 text-white/80" />
-                          <span className="font-medium">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-                </Card>
+              <div className="space-y-12">
+                <div className="bg-primary p-12 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 blur-[50px] rounded-full -mr-16 -mt-16"></div>
+                  <h3 className="text-2xl font-bold mb-10 italic">The Gajjala Promise</h3>
+                  <ul className="space-y-8">
+                    {[
+                      'Instant Confirmation',
+                      'Expert Specialists',
+                      'Minimal Waiting Time',
+                      'Modern Equipment',
+                      'Transparent Pricing'
+                    ].map((item, i) => (
+                      <li key={i} className="flex items-center gap-4 group">
+                        <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-accent border border-white/10 group-hover:bg-accent group-hover:text-primary transition-all duration-500">
+                          <CheckCircle2 className="w-4 h-4" />
+                        </div>
+                        <span className="font-light text-indigo-100/70 group-hover:text-white transition-colors">{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                <Card className="border-none">
-                  <CardContent className="p-8">
-                    <h3 className="text-xl font-bold text-slate-900 mb-6">Need Help?</h3>
-                    <div className="space-y-6">
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                          <Phone className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Call Us</p>
-                          <p className="font-bold text-slate-900">8897222959</p>
-                        </div>
+                <div className="p-12 border border-slate-100">
+                  <h3 className="text-2xl font-bold text-primary mb-10 italic">Concierge Support</h3>
+                  <div className="space-y-10">
+                    <div className="flex items-center gap-6 group">
+                      <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-accent transition-all duration-500 border border-slate-100">
+                        <Phone className="w-5 h-5" />
                       </div>
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                          <Clock className="w-5 h-5" />
-                        </div>
-                        <div>
-                          <p className="text-xs text-slate-500 font-bold uppercase tracking-wider">Hours</p>
-                          <p className="font-bold text-slate-900">9 AM - 8 PM Daily</p>
-                        </div>
+                      <div>
+                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Call Us</p>
+                        <p className="font-bold text-primary text-lg italic">8897222959</p>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
+                    <div className="flex items-center gap-6 group">
+                      <div className="w-12 h-12 rounded-full bg-slate-50 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-accent transition-all duration-500 border border-slate-100">
+                        <Clock className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-1">Hours</p>
+                        <p className="font-bold text-primary text-lg italic">9 AM - 8 PM Daily</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

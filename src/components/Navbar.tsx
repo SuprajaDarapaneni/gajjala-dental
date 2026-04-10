@@ -1,16 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Phone, Menu, Clock, MapPin } from 'lucide-react';
+import { Phone, Menu, Clock, MapPin, Stethoscope, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -28,6 +26,7 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
+    { name: 'Equipment', href: '/equipment' },
     { name: 'Booking', href: '/booking' },
     { name: 'FAQ', href: '/faq' },
     { name: 'Contact', href: '/contact' },
@@ -42,87 +41,85 @@ export default function Navbar() {
   ];
 
   const getHeaderStyle = () => {
-    if (isScrolled) return 'bg-white py-2';
+    if (isScrolled) return 'bg-white/95 backdrop-blur-md py-2 border-b border-slate-100';
     if (isHomePage) return 'bg-transparent py-4';
     return 'bg-primary py-3';
   };
 
   const getTextColor = () => {
-    if (isScrolled) return 'text-slate-700';
+    if (isScrolled) return 'text-primary';
     if (isHomePage) return 'text-white';
     return 'text-white';
   };
 
   const getLogoColor = () => {
-    if (isScrolled) return 'text-slate-900';
+    if (isScrolled) return 'text-primary';
     if (isHomePage) return 'text-white';
     return 'text-white';
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${getHeaderStyle()}`}>
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${getHeaderStyle()}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-primary rounded-xl flex items-center justify-center text-white font-bold text-2xl">G</div>
+        <Link to="/" className="flex items-center gap-3 group">
+          <div className="w-12 h-12 bg-accent rounded-full flex items-center justify-center text-primary font-bold text-2xl group-hover:rotate-12 transition-transform duration-500">
+            <Stethoscope className="w-7 h-7" />
+          </div>
           <div className="flex flex-col">
             <span className={`font-heading font-bold text-xl md:text-2xl leading-tight tracking-tight ${getLogoColor()}`}>
-              Gajjala Multispeciality Dental Hospital<span className="text-primary"> </span>
+              Gajjala Multispeciality Dental Hospital
+            </span>
+            <span className={`text-[10px] uppercase tracking-[0.3em] font-bold ${isScrolled ? 'text-accent' : 'text-accent'}`}>
+              Narasaraopet
             </span>
           </div>
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-6">
-          <Link to="/" className={`text-sm font-bold transition-colors hover:text-primary ${getTextColor()}`}>Home</Link>
-          <Link to="/about" className={`text-sm font-bold transition-colors hover:text-primary ${getTextColor()}`}>About</Link>
+        <nav className="hidden lg:flex items-center gap-8">
+          {navLinks.slice(0, 2).map((link) => (
+            <Link 
+              key={link.name} 
+              to={link.href} 
+              className={`text-xs uppercase tracking-widest font-bold transition-all hover:text-accent ${getTextColor()}`}
+            >
+              {link.name}
+            </Link>
+          ))}
           
-          <NavigationMenu>
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className={`bg-transparent hover:bg-transparent focus:bg-transparent data-[active]:bg-transparent data-[state=open]:bg-transparent font-bold text-sm ${getTextColor()}`}>
-                  Treatments
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                    {treatments.map((treatment) => (
-                      <li key={treatment.title}>
-                        <NavigationMenuLink asChild>
-                          <Link
-                            to="/treatments"
-                            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                          >
-                            <div className="text-sm font-bold leading-none">{treatment.title}</div>
-                            <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
-                              Advanced care for your {treatment.title.toLowerCase()}.
-                            </p>
-                          </Link>
-                        </NavigationMenuLink>
-                      </li>
-                    ))}
-                  </ul>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
+          <DropdownMenu>
+            <DropdownMenuTrigger className={`flex items-center gap-1 text-xs uppercase tracking-widest font-bold outline-none transition-all hover:text-accent ${getTextColor()}`}>
+              Treatments <ChevronDown className="w-3 h-3" />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent className="bg-white border-slate-100 p-2 min-w-[200px]">
+              {treatments.map((item) => (
+                <DropdownMenuItem key={item.title} asChild>
+                  <Link to="/treatments" className="w-full px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
+                    {item.title}
+                  </Link>
+                </DropdownMenuItem>
+              ))}
+            </DropdownMenuContent>
+          </DropdownMenu>
 
           {navLinks.slice(2).map((link) => (
             <Link 
               key={link.name} 
               to={link.href} 
-              className={`text-sm font-bold transition-colors hover:text-primary ${getTextColor()}`}
+              className={`text-xs uppercase tracking-widest font-bold transition-all hover:text-accent ${getTextColor()}`}
             >
               {link.name}
             </Link>
           ))}
-          <Button className="rounded-full px-6 font-bold">
-            <Phone className="w-4 h-4 mr-2" />
-            8897222959
+          
+          <Button asChild className="rounded-none px-8 font-bold uppercase tracking-widest text-xs bg-accent text-primary hover:bg-accent/90 transition-all duration-300">
+            <Link to="/booking">Book Appointment</Link>
           </Button>
         </nav>
 
         {/* Mobile Nav */}
         <div className="lg:hidden flex items-center gap-4">
-          <a href="tel:8897222959" className="p-2 bg-primary text-white rounded-full">
+          <a href="tel:8897222959" className="p-2 bg-accent text-primary rounded-full">
             <Phone className="w-4 h-4" />
           </a>
           <Sheet>
@@ -131,25 +128,26 @@ export default function Navbar() {
                 <Menu className="w-6 h-6" />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-              <div className="flex flex-col gap-6 mt-12">
+            <SheetContent side="right" className="w-[300px] bg-primary text-white border-none">
+              <div className="flex flex-col gap-8 mt-12">
                 {navLinks.map((link) => (
                   <Link 
                     key={link.name} 
                     to={link.href} 
-                    className="text-xl font-bold text-slate-900 hover:text-primary transition-colors"
+                    className="text-2xl font-bold italic hover:text-accent transition-colors"
                   >
                     {link.name}
                   </Link>
                 ))}
-                <Link to="/treatments" className="text-xl font-bold text-slate-900 hover:text-primary transition-colors">Treatments</Link>
-                <div className="flex flex-col gap-4 pt-8 border-t">
-                  <div className="flex items-center gap-3 text-slate-600">
-                    <Clock className="w-5 h-5 text-primary" />
+                <Link to="/treatments" className="text-2xl font-bold italic hover:text-accent transition-colors">Treatments</Link>
+                
+                <div className="flex flex-col gap-6 pt-12 border-t border-white/10">
+                  <div className="flex items-center gap-4 text-indigo-100">
+                    <Clock className="w-5 h-5 text-accent" />
                     <span className="text-sm font-medium">9 AM - 8 PM Every Day</span>
                   </div>
-                  <div className="flex items-center gap-3 text-slate-600">
-                    <MapPin className="w-5 h-5 text-primary" />
+                  <div className="flex items-center gap-4 text-indigo-100">
+                    <MapPin className="w-5 h-5 text-accent" />
                     <span className="text-sm font-medium">Narasaraopet & Sattenepalli</span>
                   </div>
                 </div>

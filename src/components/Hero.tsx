@@ -1,68 +1,83 @@
 import { Button } from '@/components/ui/button';
 import { motion } from 'motion/react';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Sparkles } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-0 overflow-hidden bg-slate-900">
+    <section className="relative min-h-screen flex items-center pt-0 overflow-hidden bg-primary">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
           src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?q=80&w=2070&auto=format&fit=crop" 
           alt="Modern Dental Clinic" 
-          className="w-full h-full object-cover opacity-60"
+          className="w-full h-full object-cover opacity-30 grayscale contrast-125"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/40 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10 pt-20">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <span className="inline-block py-2 px-4 rounded-full bg-white/10 text-white backdrop-blur-sm text-sm font-bold uppercase tracking-widest mb-6 border border-white/20">
-              Gajjala Multispeciality Dental Hospital
-            </span>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white leading-[1.1] mb-6">
-              Your Smile, Our <span className="text-accent">Priority</span>
+            <div className="flex items-center gap-3 mb-8">
+              <div className="h-px w-12 bg-accent"></div>
+              <span className="text-accent text-sm font-bold uppercase tracking-[0.4em]">
+                Excellence in Dentistry
+              </span>
+            </div>
+            
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white leading-[0.9] mb-8 italic">
+              Your Smile, <br />
+              Our <span className="text-accent">Masterpiece</span>
             </h1>
-            <p className="text-lg text-indigo-100 mb-8 max-w-lg">
-              Experience world-class dental care with advanced technology and a team of specialized experts in Narasaraopet.
+            
+            <p className="text-xl text-indigo-100/70 mb-12 max-w-xl font-light leading-relaxed">
+              Experience world-class dental care with advanced technology and a team of specialized experts in <span className="text-white font-medium">Narasaraopet</span>.
             </p>
 
-            <div className="flex flex-wrap gap-4 mb-10">
-              <Button size="lg" className="rounded-full px-8 h-14 text-lg font-bold bg-accent text-accent-foreground hover:bg-accent/90">
-                Book Appointment
-                <ArrowRight className="ml-2 w-5 h-5" />
+            <div className="flex flex-wrap gap-6 mb-16">
+              <Button asChild size="lg" className="rounded-none px-10 h-16 text-sm uppercase tracking-widest font-bold bg-accent text-primary hover:bg-white transition-all duration-500 group">
+                <Link to="/booking">
+                  Book Appointment
+                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="rounded-none px-10 h-16 text-sm uppercase tracking-widest font-bold border-white/20 text-white hover:bg-white hover:text-primary transition-all duration-500">
+                <Link to="/treatments">Our Services</Link>
               </Button>
             </div>
 
-            <div className="grid grid-cols-2 gap-6">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white border border-white/20">
-                  <CheckCircle2 className="w-6 h-6" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
+              <div className="flex items-center gap-5 group">
+                <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-accent border border-white/10 group-hover:bg-accent group-hover:text-primary transition-all duration-500">
+                  <Sparkles className="w-7 h-7" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">10+</p>
-                  <p className="text-sm text-indigo-200">Years Experience</p>
+                  <p className="text-3xl font-bold text-white italic">10+</p>
+                  <p className="text-xs uppercase tracking-widest text-indigo-200 font-bold">Years of Artistry</p>
                 </div>
               </div>
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center text-white border border-white/20">
-                  <CheckCircle2 className="w-6 h-6" />
+              <div className="flex items-center gap-5 group">
+                <div className="w-14 h-14 rounded-full bg-white/5 flex items-center justify-center text-accent border border-white/10 group-hover:bg-accent group-hover:text-primary transition-all duration-500">
+                  <CheckCircle2 className="w-7 h-7" />
                 </div>
                 <div>
-                  <p className="text-2xl font-bold text-white">3k+</p>
-                  <p className="text-sm text-indigo-200">Happy Smiles</p>
+                  <p className="text-3xl font-bold text-white italic">3k+</p>
+                  <p className="text-xs uppercase tracking-widest text-indigo-200 font-bold">Happy Patients</p>
                 </div>
               </div>
             </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Decorative Elements */}
+      <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-accent/5 blur-[120px] rounded-full -mb-20 -mr-20"></div>
     </section>
   );
 }
