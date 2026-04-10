@@ -45,11 +45,6 @@ function AppContent() {
   return (
     <div className="min-h-screen selection:bg-primary/30 selection:text-primary-foreground">
       <ScrollToTop />
-      {/* Progress Bar */}
-      <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-primary z-[60] origin-left"
-        style={{ scaleX }}
-      />
 
       <Navbar />
       
