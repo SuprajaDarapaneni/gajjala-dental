@@ -35,31 +35,31 @@ const doctors = [
 
 export default function Team() {
   return (
-    <section id="team" className="py-24 bg-slate-50">
+    <section id="team" className="py-24 bg-secondary/30">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Meet Our Expert Doctors</h2>
-            <p className="text-slate-600">Our team of highly qualified specialists is dedicated to providing the best dental care for you and your family.</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">Meet Our Expert Doctors</h2>
+            <p className="text-primary/60">Our team of highly qualified specialists is dedicated to providing the best dental care for you and your family.</p>
           </div>
-          <Badge variant="outline" className="text-primary border-primary px-4 py-1 text-sm font-bold rounded-full">
+          <Badge variant="outline" className="text-primary border-primary/20 px-4 py-1 text-sm font-bold rounded-full">
             Specialized Team
           </Badge>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {doctors.map((doctor, index) => (
-            <Card key={index} className="border-none transition-all duration-500 overflow-hidden group bg-white">
+            <Card key={index} className="border-none transition-all duration-500 overflow-hidden group bg-white hover:shadow-xl hover:shadow-primary/5">
               <CardContent className="p-8 text-center">
-                <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
+                <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-primary mx-auto mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   <span className="text-2xl font-bold">{doctor.name.split(' ').pop()?.charAt(0)}</span>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-1">{doctor.name}</h3>
-                <p className="text-primary font-bold text-sm mb-4">{doctor.qualification}</p>
-                <Badge variant="secondary" className="bg-slate-50 text-slate-600 font-bold px-4 py-1">
+                <h3 className="text-xl font-bold text-primary mb-1">{doctor.name}</h3>
+                <p className="text-accent font-bold text-sm mb-4">{doctor.qualification}</p>
+                <Badge variant="secondary" className="bg-secondary text-primary/70 font-bold px-4 py-1">
                   {doctor.role}
                 </Badge>
-                <p className="text-xs text-slate-400 mt-4 font-medium uppercase tracking-wider">{doctor.specialty}</p>
+                <p className="text-xs text-primary/40 mt-4 font-medium uppercase tracking-wider">{doctor.specialty}</p>
               </CardContent>
             </Card>
           ))}

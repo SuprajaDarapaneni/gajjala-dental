@@ -15,41 +15,40 @@ export default function Contact() {
               <span className="text-accent text-sm font-bold uppercase tracking-widest">Contact Us</span>
             </div>
             <h2 className="text-4xl md:text-6xl font-bold text-primary mb-8 italic">Get in Touch</h2>
-            <p className="text-slate-500 mb-12 text-xl font-light leading-relaxed">
+            <p className="text-primary/60 mb-12 text-xl font-light leading-relaxed">
               Have questions or want to book an appointment? Reach out to us and we'll get back to you as soon as possible.
             </p>
 
             <div className="space-y-12">
               <div className="flex gap-8 group">
-                <div className="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center text-primary shrink-0 border border-slate-100 group-hover:bg-primary group-hover:text-accent transition-all duration-500">
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-primary shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <Phone className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Phone Number</h4>
+                  <h4 className="text-xs uppercase tracking-widest font-bold text-primary/40 mb-2">Phone Number</h4>
                   <p className="text-xl font-bold text-primary italic">+91 8897222959</p>
-                  <p className="text-xl font-bold text-primary italic">+91 8897222958</p>
                 </div>
               </div>
 
               <div className="flex gap-8 group">
-                <div className="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center text-primary shrink-0 border border-slate-100 group-hover:bg-primary group-hover:text-accent transition-all duration-500">
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-primary shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <Clock className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Working Hours</h4>
+                  <h4 className="text-xs uppercase tracking-widest font-bold text-primary/40 mb-2">Working Hours</h4>
                   <p className="text-xl font-bold text-primary italic">9:00 AM - 8:00 PM</p>
-                  <p className="text-slate-500 font-light">Open Every Day</p>
+                  <p className="text-primary/60 font-light">Open Every Day</p>
                 </div>
               </div>
 
               <div className="flex gap-8 group">
-                <div className="w-16 h-16 rounded-full bg-slate-50 flex items-center justify-center text-primary shrink-0 border border-slate-100 group-hover:bg-primary group-hover:text-accent transition-all duration-500">
+                <div className="w-16 h-16 rounded-full bg-secondary flex items-center justify-center text-primary shrink-0 border border-primary/10 group-hover:bg-primary group-hover:text-white transition-all duration-500">
                   <MapPin className="w-7 h-7" />
                 </div>
                 <div>
-                  <h4 className="text-xs uppercase tracking-widest font-bold text-slate-400 mb-2">Location</h4>
+                  <h4 className="text-xs uppercase tracking-widest font-bold text-primary/40 mb-2">Location</h4>
                   <p className="text-xl font-bold text-primary italic">Narasaraopet & Sattenepalli</p>
-                  <p className="text-slate-500 font-light">Andhra Pradesh, India</p>
+                  <p className="text-primary/60 font-light">Andhra Pradesh, India</p>
                 </div>
               </div>
             </div>

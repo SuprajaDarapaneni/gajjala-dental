@@ -47,7 +47,7 @@ export default function Home() {
       <Hero />
       
       {/* Trust Banner with Branches */}
-      <div className="bg-white py-24 border-y border-slate-100">
+      <div className="bg-white py-24 border-y border-secondary">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 items-center">
             <motion.div 
@@ -78,7 +78,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-4">
                 <div className="h-px w-8 bg-accent"></div>
-                <span className="text-xs uppercase tracking-[0.4em] font-bold text-slate-400">Our Presence</span>
+                <span className="text-xs uppercase tracking-[0.4em] font-bold text-primary/40">Our Presence</span>
               </div>
               <div className="flex flex-col sm:flex-row gap-8">
                 <div className="flex items-center gap-4">
@@ -145,9 +145,9 @@ export default function Home() {
                 <span className="text-accent text-sm font-bold uppercase tracking-widest">Testimonials</span>
               </div>
               <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6 italic">Voices of Trust</h2>
-              <p className="text-slate-500 text-lg font-light">Real stories from real patients who have experienced our artistry.</p>
+              <p className="text-primary/60 text-lg font-light">Real stories from real patients who have experienced our artistry.</p>
             </div>
-            <div className="flex items-center gap-4 bg-slate-50 px-8 py-4 border border-slate-100">
+            <div className="flex items-center gap-4 bg-secondary px-8 py-4 border border-primary/10">
               <div className="flex text-accent">
                 {[...Array(5)].map((_, i) => <Star key={i} className="w-5 h-5 fill-current" />)}
               </div>
@@ -164,16 +164,16 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
               >
-                <Card className="border-none bg-slate-50 rounded-none p-4 relative overflow-hidden group">
+                <Card className="border-none bg-secondary/30 rounded-none p-4 relative overflow-hidden group hover:shadow-2xl hover:shadow-primary/5 transition-all duration-500">
                   <CardContent className="p-8">
                     <Quote className="absolute top-6 right-8 w-16 h-16 text-primary/5 group-hover:text-accent/10 transition-colors duration-500" />
                     <div className="flex text-accent mb-6">
                       {[...Array(review.rating)].map((_, i) => <Star key={i} className="w-4 h-4 fill-current" />)}
                     </div>
-                    <p className="text-slate-700 italic mb-8 leading-relaxed font-light text-lg">"{review.text}"</p>
-                    <div className="flex items-center justify-between border-t border-slate-200 pt-6">
+                    <p className="text-primary/80 italic mb-8 leading-relaxed font-light text-lg">"{review.text}"</p>
+                    <div className="flex items-center justify-between border-t border-primary/10 pt-6">
                       <p className="font-bold text-primary italic text-xl">{review.name}</p>
-                      <p className="text-[10px] uppercase tracking-widest font-bold text-slate-400">{review.date}</p>
+                      <p className="text-[10px] uppercase tracking-widest font-bold text-primary/40">{review.date}</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -230,7 +230,7 @@ export default function Home() {
                 <img 
                   src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop" 
                   alt="Dental Technology" 
-                  className="w-full h-full object-cover grayscale contrast-125 opacity-80"
+                  className="w-full h-full object-cover contrast-125 opacity-80"
                   referrerPolicy="no-referrer"
                 />
               </motion.div>

@@ -68,7 +68,7 @@ export default function Treatments() {
       className="pt-0"
     >
       <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 grayscale">
+        <div className="absolute inset-0 opacity-20">
           <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" alt="bg" className="w-full h-full object-cover" />
         </div>
         <div className="container mx-auto px-4 text-center relative z-10">
@@ -96,15 +96,15 @@ export default function Treatments() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
               >
-                <Card className="border-none transition-all duration-500 overflow-hidden group rounded-none bg-slate-50">
+                <Card className="border-none transition-all duration-500 overflow-hidden group rounded-none bg-secondary/30 hover:shadow-2xl hover:shadow-primary/10">
                   <div className="relative h-72 overflow-hidden">
                     <img 
                       src={treatment.image} 
                       alt={treatment.title} 
-                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110 grayscale group-hover:grayscale-0"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-colors duration-500"></div>
+                    <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors duration-500"></div>
                     <div className="absolute top-6 left-6">
                       <div className="w-14 h-14 bg-accent rounded-full flex items-center justify-center text-primary group-hover:rotate-12 transition-transform duration-500">
                         <treatment.icon className="w-7 h-7" />
@@ -113,12 +113,12 @@ export default function Treatments() {
                   </div>
                   <CardContent className="p-10">
                     <h3 className="text-3xl font-bold text-primary mb-6 italic">{treatment.title}</h3>
-                    <p className="text-slate-500 mb-8 leading-relaxed font-light">
+                    <p className="text-primary/60 mb-8 leading-relaxed font-light">
                       {treatment.description}
                     </p>
-                    <div className="space-y-4 border-t border-slate-200 pt-8">
+                    <div className="space-y-4 border-t border-primary/10 pt-8">
                       {treatment.details.map((detail, i) => (
-                        <div key={i} className="flex items-center gap-4 text-slate-700 font-bold text-xs uppercase tracking-widest">
+                        <div key={i} className="flex items-center gap-4 text-primary/80 font-bold text-xs uppercase tracking-widest">
                           <div className="w-1.5 h-1.5 bg-accent rounded-full"></div>
                           {detail}
                         </div>
@@ -138,7 +138,7 @@ export default function Treatments() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-bold mb-8 italic">Bespoke Treatment Plans</h2>
-            <p className="text-indigo-100/60 mb-12 text-xl font-light leading-relaxed">
+            <p className="text-white/70 mb-12 text-xl font-light leading-relaxed">
               Schedule a comprehensive consultation with our experts. We'll examine your oral health and recommend the best course of action.
             </p>
             <Button asChild size="lg" className="rounded-none px-12 h-16 text-sm uppercase tracking-widest font-bold bg-accent text-primary hover:bg-white transition-all duration-500">

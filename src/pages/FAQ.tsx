@@ -64,11 +64,11 @@ export default function FAQ() {
             <div className="space-y-12">
               <Accordion type="single" collapsible className="w-full space-y-6">
                 {faqs.map((faq, index) => (
-                  <AccordionItem key={index} value={`item-${index}`} className="border-0 bg-slate-50 px-8 py-4 group">
+                  <AccordionItem key={index} value={`item-${index}`} className="border-0 bg-secondary/30 px-8 py-4 group">
                     <AccordionTrigger className="text-left font-bold text-2xl text-primary hover:text-accent transition-all duration-500 italic no-underline hover:no-underline">
                       {faq.question}
                     </AccordionTrigger>
-                    <AccordionContent className="text-slate-600 text-lg leading-relaxed pt-6 font-light border-t border-slate-200 mt-4">
+                    <AccordionContent className="text-primary/60 text-lg leading-relaxed pt-6 font-light border-t border-primary/10 mt-4">
                       {faq.answer}
                     </AccordionContent>
                   </AccordionItem>

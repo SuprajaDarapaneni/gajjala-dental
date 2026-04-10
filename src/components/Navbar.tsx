@@ -41,20 +41,20 @@ export default function Navbar() {
   ];
 
   const getHeaderStyle = () => {
-    if (isScrolled) return 'bg-white/95 backdrop-blur-md py-2 border-b border-slate-100';
+    if (isScrolled) return 'bg-white/95 backdrop-blur-md py-2 border-b border-secondary';
     if (isHomePage) return 'bg-transparent py-4';
     return 'bg-primary py-3';
   };
 
   const getTextColor = () => {
     if (isScrolled) return 'text-primary';
-    if (isHomePage) return 'text-white';
+    if (isHomePage) return 'text-primary';
     return 'text-white';
   };
 
   const getLogoColor = () => {
     if (isScrolled) return 'text-primary';
-    if (isHomePage) return 'text-white';
+    if (isHomePage) return 'text-primary';
     return 'text-white';
   };
 
@@ -91,10 +91,10 @@ export default function Navbar() {
             <DropdownMenuTrigger className={`flex items-center gap-1 text-xs uppercase tracking-widest font-bold outline-none transition-all hover:text-accent ${getTextColor()}`}>
               Treatments <ChevronDown className="w-3 h-3" />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-white border-slate-100 p-2 min-w-[200px]">
+            <DropdownMenuContent className="bg-white border-secondary p-2 min-w-[200px]">
               {treatments.map((item) => (
                 <DropdownMenuItem key={item.title} asChild>
-                  <Link to="/treatments" className="w-full px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-700 hover:bg-slate-50 hover:text-primary transition-colors">
+                  <Link to="/treatments" className="w-full px-4 py-2 text-xs font-bold uppercase tracking-wider text-primary/80 hover:bg-secondary hover:text-primary transition-colors">
                     {item.title}
                   </Link>
                 </DropdownMenuItem>

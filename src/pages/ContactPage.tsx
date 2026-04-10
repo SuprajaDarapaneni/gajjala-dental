@@ -22,12 +22,12 @@ export default function ContactPage() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24">
-            <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+            <div className="bg-secondary/30 p-10 rounded-3xl border border-primary/10 shadow-sm hover:shadow-md transition-all">
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8">
                 <MapPin className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Narasaraopet Branch</h3>
-              <p className="text-slate-600 mb-6 text-lg">
+              <h3 className="text-2xl font-bold text-primary mb-4">Narasaraopet Branch</h3>
+              <p className="text-primary/60 mb-6 text-lg">
                 Gajjala Multispeciality Dental Hospital<br />
                 Palnadu Bus Stand, Narasaraopet,<br />
                 Palnadu District, Andhra Pradesh.
@@ -38,19 +38,19 @@ export default function ContactPage() {
               </div>
             </div>
 
-            <div className="bg-slate-50 p-10 rounded-3xl border border-slate-100 shadow-sm hover:shadow-md transition-all">
+            <div className="bg-secondary/30 p-10 rounded-3xl border border-primary/10 shadow-sm hover:shadow-md transition-all">
               <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center text-primary mb-8">
                 <MapPin className="w-8 h-8" />
               </div>
-              <h3 className="text-2xl font-bold text-slate-900 mb-4">Sattenepalli Branch</h3>
-              <p className="text-slate-600 mb-6 text-lg">
+              <h3 className="text-2xl font-bold text-primary mb-4">Sattenepalli Branch</h3>
+              <p className="text-primary/60 mb-6 text-lg">
                 Gajjala Multispeciality Dental Hospital<br />
                 Main Road, Sattenepalli,<br />
                 Palnadu District, Andhra Pradesh.
               </p>
               <div className="flex items-center gap-3 text-primary font-bold">
                 <Phone className="w-5 h-5" />
-                8897222958
+                8897222959
               </div>
             </div>
           </div>

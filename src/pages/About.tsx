@@ -11,7 +11,7 @@ export default function About() {
     >
       {/* Hero Section */}
       <section className="bg-primary text-white pt-32 pb-20 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-20 grayscale">
+        <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2053&auto=format&fit=crop" 
             alt="Hospital Interior" 
@@ -59,8 +59,8 @@ export default function About() {
                   <div className="w-12 h-px bg-accent"></div>
                   <span className="text-accent text-sm font-bold uppercase tracking-widest">Our Mission</span>
                 </div>
-                <h2 className="text-4xl font-bold mb-6 italic">Precision & Compassion</h2>
-                <p className="text-slate-600 text-lg leading-relaxed font-light">
+                <h2 className="text-4xl font-bold mb-6 italic text-primary">Precision & Compassion</h2>
+                <p className="text-primary/60 text-lg leading-relaxed font-light">
                   To provide accessible, high-quality, and compassionate dental care using state-of-the-art technology. We strive to educate our patients about oral health and deliver results that exceed expectations.
                 </p>
               </motion.div>
@@ -74,8 +74,8 @@ export default function About() {
                   <div className="w-12 h-px bg-accent"></div>
                   <span className="text-accent text-sm font-bold uppercase tracking-widest">Our Vision</span>
                 </div>
-                <h2 className="text-4xl font-bold mb-6 italic">The Standard of Care</h2>
-                <p className="text-slate-600 text-lg leading-relaxed font-light">
+                <h2 className="text-4xl font-bold mb-6 italic text-primary">The Standard of Care</h2>
+                <p className="text-primary/60 text-lg leading-relaxed font-light">
                   To be the most trusted dental healthcare provider in the region, recognized for our clinical excellence, patient-centric approach, and innovation in dental treatments.
                 </p>
               </motion.div>
@@ -106,7 +106,7 @@ export default function About() {
                   <item.icon className="w-10 h-10" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4 italic">{item.title}</h3>
-                <p className="text-indigo-100/60 font-light leading-relaxed">{item.desc}</p>
+                <p className="text-white/70 font-light leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -127,7 +127,7 @@ export default function About() {
               </h2>
               <div className="space-y-2">
                 <p className="font-bold text-2xl text-accent italic">Dr. Parameshwara Reddy</p>
-                <p className="text-indigo-100/50 uppercase tracking-[0.3em] text-xs font-bold">BDS, Founder & Chief Dentist</p>
+                <p className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold">BDS, Founder & Chief Dentist</p>
               </div>
             </div>
           </div>

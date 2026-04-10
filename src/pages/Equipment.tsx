@@ -87,16 +87,16 @@ export default function Equipment() {
                 className="group"
               >
                 <div className="flex flex-col md:flex-row gap-8 items-start">
-                  <div className="w-20 h-20 bg-primary/5 rounded-full flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-accent transition-all duration-500 border border-primary/10">
+                  <div className="w-20 h-20 bg-secondary rounded-full flex items-center justify-center text-primary shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500 border border-primary/10">
                     <item.icon className="w-10 h-10" />
                   </div>
                   <div>
                     <h3 className="text-3xl font-bold text-primary mb-4 italic">{item.name}</h3>
-                    <p className="text-slate-600 font-medium mb-4 text-lg leading-relaxed">
+                    <p className="text-primary/80 font-medium mb-4 text-lg leading-relaxed">
                       {item.desc}
                     </p>
                     <div className="h-px w-20 bg-accent mb-6 group-hover:w-full transition-all duration-700"></div>
-                    <p className="text-slate-500 leading-relaxed">
+                    <p className="text-primary/60 leading-relaxed">
                       {item.details}
                     </p>
                   </div>

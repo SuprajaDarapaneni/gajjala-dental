@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { motion } from 'motion/react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
@@ -17,6 +17,30 @@ import {
 
 export default function Booking() {
   const [bookingType, setBookingType] = useState<'online' | 'offline'>('online');
+  const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    date: '',
+    branch: 'Narasaraopet (Palnadu Bus Stand)',
+    message: ''
+  });
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    
+    if (formData.branch === 'Sattenepalli') {
+      const message = `*New Appointment Request*\n\n*Name:* ${formData.name}\n*Phone:* ${formData.phone}\n*Date:* ${formData.date}\n*Branch:* ${formData.branch}\n*Type:* ${bookingType === 'online' ? 'Online Consultation' : 'In-Person Visit'}\n*Reason:* ${formData.message}`;
+      window.open(`https://wa.me/918897222959?text=${encodeURIComponent(message)}`, '_blank');
+    } else {
+      // Normal submission logic or alert
+      alert('Booking request received for Narasaraopet branch. We will contact you soon.');
+    }
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { id, value } = e.target;
+    setFormData(prev => ({ ...prev, [id]: value }));
+  };
 
   return (
     <motion.div
@@ -76,20 +100,34 @@ export default function Booking() {
                       {bookingType === 'online' ? 'Schedule Online Consultation' : 'Book In-Person Visit'}
                     </h2>
                     
-                    <form className="space-y-10">
+                    <form className="space-y-10" onSubmit={handleSubmit}>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                         <div className="space-y-3">
                           <Label htmlFor="name" className="text-xs uppercase tracking-widest font-bold text-slate-400">Full Name</Label>
                           <div className="relative">
                             <User className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-accent" />
-                            <Input id="name" placeholder="Enter your name" className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" />
+                            <Input 
+                              id="name" 
+                              required
+                              value={formData.name}
+                              onChange={handleChange}
+                              placeholder="Enter your name" 
+                              className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" 
+                            />
                           </div>
                         </div>
                         <div className="space-y-3">
                           <Label htmlFor="phone" className="text-xs uppercase tracking-widest font-bold text-slate-400">Phone Number</Label>
                           <div className="relative">
                             <Phone className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-accent" />
-                            <Input id="phone" placeholder="+91 00000 00000" className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" />
+                            <Input 
+                              id="phone" 
+                              required
+                              value={formData.phone}
+                              onChange={handleChange}
+                              placeholder="+91 00000 00000" 
+                              className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" 
+                            />
                           </div>
                         </div>
                       </div>
@@ -99,14 +137,26 @@ export default function Booking() {
                           <Label htmlFor="date" className="text-xs uppercase tracking-widest font-bold text-slate-400">Preferred Date</Label>
                           <div className="relative">
                             <CalendarIcon className="absolute left-0 top-1/2 -translate-y-1/2 w-4 h-4 text-accent" />
-                            <Input id="date" type="date" className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" />
+                            <Input 
+                              id="date" 
+                              required
+                              type="date" 
+                              value={formData.date}
+                              onChange={handleChange}
+                              className="pl-8 h-14 border-0 border-b border-slate-200 rounded-none focus-visible:ring-0 focus-visible:border-primary transition-colors bg-transparent" 
+                            />
                           </div>
                         </div>
                         <div className="space-y-3">
                           <Label htmlFor="branch" className="text-xs uppercase tracking-widest font-bold text-slate-400">Select Branch</Label>
-                          <select id="branch" className="w-full h-14 px-0 rounded-none border-0 border-b border-slate-200 bg-transparent text-sm focus:outline-none focus:border-primary transition-colors appearance-none font-bold text-primary">
-                            <option>Narasaraopet (Palnadu Bus Stand)</option>
-                            <option>Sattenepalli</option>
+                          <select 
+                            id="branch" 
+                            value={formData.branch}
+                            onChange={handleChange}
+                            className="w-full h-14 px-0 rounded-none border-0 border-b border-slate-200 bg-transparent text-sm focus:outline-none focus:border-primary transition-colors appearance-none font-bold text-primary"
+                          >
+                            <option value="Narasaraopet (Palnadu Bus Stand)">Narasaraopet (Palnadu Bus Stand)</option>
+                            <option value="Sattenepalli">Sattenepalli</option>
                           </select>
                         </div>
                       </div>
@@ -118,13 +168,15 @@ export default function Booking() {
                           <textarea 
                             id="message" 
                             rows={4} 
+                            value={formData.message}
+                            onChange={handleChange}
                             className="w-full pl-8 p-3 h-32 border-0 border-b border-slate-200 rounded-none focus:outline-none focus:border-primary transition-colors bg-transparent text-sm font-light leading-relaxed"
                             placeholder="Briefly describe your dental concern..."
                           ></textarea>
                         </div>
                       </div>
 
-                      <Button className="w-full h-16 text-sm uppercase tracking-widest font-bold rounded-none bg-primary text-white hover:bg-accent hover:text-primary transition-all duration-500">
+                      <Button type="submit" className="w-full h-16 text-sm uppercase tracking-widest font-bold rounded-none bg-primary text-white hover:bg-accent hover:text-primary transition-all duration-500">
                         Confirm {bookingType === 'online' ? 'Online' : 'Offline'} Booking
                       </Button>
                     </form>
