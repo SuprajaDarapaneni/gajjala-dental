@@ -127,7 +127,7 @@ export default function About() {
               </h2>
               <div className="space-y-2">
                 <p className="font-bold text-2xl text-accent italic">Dr. Parameshwara Reddy</p>
-                <p className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold">BDS, Founder & Chief Dentist</p>
+                <p className="text-white/50 uppercase tracking-[0.3em] text-xs font-bold">Founder & Chairman</p>
               </div>
             </div>
           </div>

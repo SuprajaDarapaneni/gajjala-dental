@@ -33,11 +33,11 @@ export default function Navbar() {
   ];
 
   const treatments = [
-    { title: 'Dental Implants', href: '/treatments#implants' },
-    { title: 'Root Canal', href: '/treatments#root-canal' },
-    { title: 'Orthodontics', href: '/treatments#ortho' },
-    { title: 'Teeth Whitening', href: '/treatments#whitening' },
-    { title: 'Pediatric Dentistry', href: '/treatments#pediatric' },
+    { title: 'Facial Surgery', href: '/treatments' },
+    { title: 'Dental Implants', href: '/treatments' },
+    { title: 'Root Canal', href: '/treatments' },
+    { title: 'Orthodontics', href: '/treatments' },
+    { title: 'Periocare', href: '/treatments' },
   ];
 
   const getHeaderStyle = () => {

@@ -29,7 +29,8 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold text-primary mb-4">Narasaraopet Branch</h3>
               <p className="text-primary/60 mb-6 text-lg">
                 Gajjala Multispeciality Dental Hospital<br />
-                Palnadu Bus Stand, Narasaraopet,<br />
+                Beside puvvada hospital,<br />
+                Palnadu Road, Narasaraopet,<br />
                 Palnadu District, Andhra Pradesh.
               </p>
               <div className="flex items-center gap-3 text-primary font-bold">
@@ -45,7 +46,8 @@ export default function ContactPage() {
               <h3 className="text-2xl font-bold text-primary mb-4">Sattenepalli Branch</h3>
               <p className="text-primary/60 mb-6 text-lg">
                 Gajjala Multispeciality Dental Hospital<br />
-                Main Road, Sattenepalli,<br />
+                Auto Nagar, Guntur Road,<br />
+                Sattenepalli,<br />
                 Palnadu District, Andhra Pradesh.
               </p>
               <div className="flex items-center gap-3 text-primary font-bold">
