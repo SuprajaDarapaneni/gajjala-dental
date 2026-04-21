@@ -10,6 +10,9 @@ export default defineConfig(({mode}) => {
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
+    build: {
+      assetsInlineLimit: 600000, // Inline images up to 600KB to ensure reliability
+    },
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
