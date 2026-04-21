@@ -2,26 +2,31 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CircleUserRound } from 'lucide-react';
 
+// Import images for better bundling reliability
+import parameswaraImg from '@/assets/docs/parameswara.jpeg';
+import swethaImg from '@/assets/docs/swetha.jpeg';
+import rajasekharImg from '@/assets/docs/rajasekhar.jpeg';
+
 const doctors = [
   {
     name: 'Dr. Parameshwara Reddy',
     qualification: 'Founder & Chairman',
     role: 'General Dentist',
-    image: '/parameswara.jpeg',
+    image: parameswaraImg,
     specialty: 'Clinical Excellence'
   },
   {
     name: 'Dr. Swetha',
     qualification: 'MDS & Co-founder',
     role: 'Maxillofacial Surgeon',
-    image: '/swetha.jpeg',
+    image: swethaImg,
     specialty: 'Facial Surgery'
   },
   {
     name: 'Dr. Rajashekar',
     qualification: 'MDS (Ortho)',
     role: 'Orthodontist',
-    image: '/rajasekhar.jpeg',
+    image: rajasekharImg,
     specialty: 'Braces Specialist'
   },
   {
