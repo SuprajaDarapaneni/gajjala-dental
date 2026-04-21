@@ -2,31 +2,29 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CircleUserRound } from 'lucide-react';
 
-// Import images for robust bundling and cache-busting
-import parameswaraImg from '@/assets/doctors/parameswara-1.jpeg';
-import swethaImg from '@/assets/doctors/swetha.jpeg';
-import rajasekharImg from '@/assets/doctors/rajasekhar.jpeg';
+// Use a timestamp to force browser refresh on live domains
+const CACHE_BUSTER = 'v=1.0.2';
 
 const doctors = [
   {
     name: 'Dr. Parameshwara Reddy',
     qualification: 'Founder & Chairman',
     role: 'General Dentist',
-    image: parameswaraImg,
+    image: `/doctors/parameswara.jpeg?${CACHE_BUSTER}`,
     specialty: 'Clinical Excellence'
   },
   {
     name: 'Dr. Swetha',
     qualification: 'MDS & Co-founder',
     role: 'Maxillofacial Surgeon',
-    image: swethaImg,
+    image: `/doctors/swetha.jpeg?${CACHE_BUSTER}`,
     specialty: 'Facial Surgery'
   },
   {
     name: 'Dr. Rajashekar',
     qualification: 'MDS (Ortho)',
     role: 'Orthodontist',
-    image: rajasekharImg,
+    image: `/doctors/rajasekhar.jpeg?${CACHE_BUSTER}`,
     specialty: 'Braces Specialist'
   },
   {

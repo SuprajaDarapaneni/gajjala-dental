@@ -36,9 +36,12 @@ async function startServer() {
     const distPath = path.join(process.cwd(), 'dist');
     const publicPath = path.join(process.cwd(), 'public');
     
+    // Explicitly serve the doctors images from public folder
+    app.use('/doctors', express.static(path.join(publicPath, 'doctors')));
+    
     // Serve dist folder first
     app.use(express.static(distPath));
-    // Fallback to public folder (useful if build hasn't finished or public is separate)
+    // Fallback to public folder
     app.use(express.static(publicPath));
 
     app.get('*', (req, res) => {
