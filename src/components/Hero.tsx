@@ -49,23 +49,21 @@ export default function Hero() {
             {/* Buttons */}
             <div className="flex flex-wrap gap-6 mb-16">
               <Button
-                asChild
+                render={<Link to="/booking" />}
                 size="lg"
                 className="rounded-none px-10 h-16 text-sm uppercase tracking-widest font-bold bg-primary text-white hover:bg-primary/90 transition-all duration-500 group shadow-lg shadow-primary/20"
               >
-                <Link to="/booking">
-                  Book Appointment
-                  <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                </Link>
+                Book Appointment
+                <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
               </Button>
 
               <Button
-                asChild
+                render={<Link to="/treatments" />}
                 variant="outline"
                 size="lg"
                 className="rounded-none px-10 h-16 text-sm uppercase tracking-widest font-bold border-primary/20 text-primary hover:bg-secondary transition-all duration-500"
               >
-                <Link to="/treatments">Our Services</Link>
+                Our Services
               </Button>
             </div>
 

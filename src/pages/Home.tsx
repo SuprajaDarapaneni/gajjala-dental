@@ -110,8 +110,8 @@ export default function Home() {
               <h2 className="text-4xl md:text-6xl font-bold mb-6 italic">The Art of Precision</h2>
               <p className="text-indigo-100/60 text-xl font-light leading-relaxed">We use world-class, state-of-the-art dental technology to ensure the highest precision and patient comfort.</p>
             </div>
-            <Button asChild variant="outline" className="rounded-none px-10 h-16 border-accent text-accent hover:bg-accent hover:text-primary transition-all duration-500 uppercase tracking-widest text-xs font-bold">
-              <Link to="/equipment">View All Equipment</Link>
+            <Button render={<Link to="/equipment" />} variant="outline" className="rounded-none px-10 h-16 border-accent text-accent hover:bg-accent hover:text-primary transition-all duration-500 uppercase tracking-widest text-xs font-bold">
+              View All Equipment
             </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12">

@@ -112,8 +112,8 @@ export default function Navbar() {
             </Link>
           ))}
           
-          <Button asChild className="rounded-none px-8 font-bold uppercase tracking-widest text-xs bg-accent text-primary hover:bg-accent/90 transition-all duration-300">
-            <Link to="/booking">Book Appointment</Link>
+          <Button render={<Link to="/booking" />} className="rounded-none px-8 font-bold uppercase tracking-widest text-xs bg-accent text-primary hover:bg-accent/90 transition-all duration-300">
+            Book Appointment
           </Button>
         </nav>
 
@@ -123,10 +123,8 @@ export default function Navbar() {
             <Phone className="w-4 h-4" />
           </a>
           <Sheet>
-            <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className={getLogoColor()}>
-                <Menu className="w-6 h-6" />
-              </Button>
+            <SheetTrigger render={<Button variant="ghost" size="icon" className={getLogoColor()} />}>
+              <Menu className="w-6 h-6" />
             </SheetTrigger>
             <SheetContent side="right" className="w-[300px] bg-primary text-white border-none">
               <div className="flex flex-col gap-8 mt-12">

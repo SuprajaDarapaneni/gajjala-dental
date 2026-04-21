@@ -141,8 +141,8 @@ export default function Treatments() {
             <p className="text-white/70 mb-12 text-xl font-light leading-relaxed">
               Schedule a comprehensive consultation with our experts. We'll examine your oral health and recommend the best course of action.
             </p>
-            <Button asChild size="lg" className="rounded-none px-12 h-16 text-sm uppercase tracking-widest font-bold bg-accent text-primary hover:bg-white transition-all duration-500">
-              <Link to="/booking">Book a Consultation</Link>
+            <Button render={<Link to="/booking" />} size="lg" className="rounded-none px-12 h-16 text-sm uppercase tracking-widest font-bold bg-accent text-primary hover:bg-white transition-all duration-500">
+              Book a Consultation
             </Button>
           </div>
         </div>
