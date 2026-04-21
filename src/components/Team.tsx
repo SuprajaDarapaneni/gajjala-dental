@@ -5,26 +5,28 @@ import { CircleUserRound } from 'lucide-react';
 // Use a timestamp to force browser refresh on live domains
 const CACHE_BUSTER = 'v=1.0.3';
 
+const BASE_URL = window.location.origin;
+
 const doctors = [
   {
     name: 'Dr. Parameshwara Reddy',
     qualification: 'Founder & Chairman',
     role: 'General Dentist',
-    image: `/doctors/parameswara.jpeg?${CACHE_BUSTER}`,
+    image: `${BASE_URL}/public/doctors/parameswara.jpeg`,
     specialty: 'Clinical Excellence'
   },
   {
     name: 'Dr. Swetha',
     qualification: 'MDS & Co-founder',
     role: 'Maxillofacial Surgeon',
-    image: `/doctors/swetha.jpeg?${CACHE_BUSTER}`,
+    image: `${BASE_URL}/public/doctors/swetha.jpeg`,
     specialty: 'Facial Surgery'
   },
   {
     name: 'Dr. Rajashekar',
     qualification: 'MDS (Ortho)',
     role: 'Orthodontist',
-    image: `/doctors/rajasekhar.jpeg?${CACHE_BUSTER}`,
+    image: `${BASE_URL}/public/doctors/rajasekhar.jpeg`,
     specialty: 'Braces Specialist'
   },
   {
