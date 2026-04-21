@@ -56,13 +56,15 @@ export default function Team() {
           {doctors.map((doctor, index) => (
             <Card key={index} className="border-none transition-all duration-500 overflow-hidden group bg-white hover:shadow-2xl hover:shadow-primary/10">
               <div className="aspect-[4/5] overflow-hidden relative bg-secondary/10 flex items-center justify-center">
-                {doctor.image ? (
-                  <img 
-                    src={doctor.image} 
-                    alt={doctor.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                ) : (
+                 
+                  {doctor.image ? (
+  <img 
+    src={doctor.image} 
+    alt={doctor.name} 
+    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+  />
+) : (
+               
                   <div className="flex flex-col items-center justify-center gap-2 p-12 text-primary/10 transition-transform duration-700 group-hover:scale-105">
                     <CircleUserRound className="w-32 h-32 stroke-[1]" />
                   </div>
