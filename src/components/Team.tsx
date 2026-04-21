@@ -3,7 +3,7 @@ import { Badge } from '@/components/ui/badge';
 import { CircleUserRound } from 'lucide-react';
 
 // Use a timestamp to force browser refresh on live domains
-const CACHE_BUSTER = 'v=1.0.2';
+const CACHE_BUSTER = 'v=1.0.3';
 
 const doctors = [
   {
