@@ -2,31 +2,26 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { CircleUserRound } from 'lucide-react';
 
-// Import images for better bundling reliability
-import parameswaraImg from '@/assets/docs/parameswara.jpeg';
-import swethaImg from '@/assets/docs/swetha.jpeg';
-import rajasekharImg from '@/assets/docs/rajasekhar.jpeg';
-
 const doctors = [
   {
     name: 'Dr. Parameshwara Reddy',
     qualification: 'Founder & Chairman',
     role: 'General Dentist',
-    image: parameswaraImg,
+    image: '/doctors/parameswara.jpeg',
     specialty: 'Clinical Excellence'
   },
   {
     name: 'Dr. Swetha',
     qualification: 'MDS & Co-founder',
     role: 'Maxillofacial Surgeon',
-    image: swethaImg,
+    image: '/doctors/swetha.jpeg',
     specialty: 'Facial Surgery'
   },
   {
     name: 'Dr. Rajashekar',
     qualification: 'MDS (Ortho)',
     role: 'Orthodontist',
-    image: rajasekharImg,
+    image: '/doctors/rajasekhar.jpeg',
     specialty: 'Braces Specialist'
   },
   {
@@ -61,7 +56,6 @@ export default function Team() {
                     src={doctor.image} 
                     alt={doctor.name} 
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
                   />
                 ) : (
                   <div className="flex flex-col items-center justify-center gap-2 p-12 text-primary/10 transition-transform duration-700 group-hover:scale-105">

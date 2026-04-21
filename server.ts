@@ -34,7 +34,13 @@ async function startServer() {
   } else {
     // In production, serve static files from dist
     const distPath = path.join(process.cwd(), 'dist');
+    const publicPath = path.join(process.cwd(), 'public');
+    
+    // Serve dist folder first
     app.use(express.static(distPath));
+    // Fallback to public folder (useful if build hasn't finished or public is separate)
+    app.use(express.static(publicPath));
+
     app.get('*', (req, res) => {
       res.sendFile(path.join(distPath, 'index.html'));
     });
