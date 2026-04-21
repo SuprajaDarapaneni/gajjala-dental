@@ -66,6 +66,7 @@ export default function Team() {
                   <img
                     src={doctor.image}
                     alt={doctor.name}
+                    referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                 ) : (

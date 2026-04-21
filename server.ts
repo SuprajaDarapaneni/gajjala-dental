@@ -33,11 +33,21 @@ async function startServer() {
     });
   } else {
     // In production, serve static files from dist
-    const distPath = path.join(process.cwd(), 'dist');
-    const publicPath = path.join(process.cwd(), 'public');
+    const distPath = path.resolve(__dirname, 'dist');
+    const publicPath = path.resolve(__dirname, 'public');
     
-    // Serve dist folder first
-    app.use(express.static(distPath));
+    console.log(`Serving assets from: ${distPath}`);
+    
+    // Serve dist folder first with caching enabled
+    app.use(express.static(distPath, {
+      maxAge: '1d',
+      setHeaders: (res, path) => {
+        if (path.endsWith('.html')) {
+          res.setHeader('Cache-Control', 'no-cache');
+        }
+      }
+    }));
+
     // Fallback to public folder
     app.use(express.static(publicPath));
 
