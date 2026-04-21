@@ -12,21 +12,21 @@ const doctors = [
     name: 'Dr. Parameshwara Reddy',
     qualification: 'Founder & Chairman',
     role: 'General Dentist',
-    image: `${BASE_URL}/public/doctors/parameswara.jpeg`,
+    image: 'doctors/parameswara.jpeg',
     specialty: 'Clinical Excellence'
   },
   {
     name: 'Dr. Swetha',
     qualification: 'MDS & Co-founder',
     role: 'Maxillofacial Surgeon',
-    image: `${BASE_URL}/public/doctors/swetha.jpeg`,
+    image: 'doctors/swetha.jpeg',
     specialty: 'Facial Surgery'
   },
   {
     name: 'Dr. Rajashekar',
     qualification: 'MDS (Ortho)',
     role: 'Orthodontist',
-    image: `${BASE_URL}/public/doctors/rajasekhar.jpeg`,
+    image: 'doctors/rajasekhar.jpeg',
     specialty: 'Braces Specialist'
   },
   {
@@ -37,7 +37,6 @@ const doctors = [
     specialty: 'Root Canal Specialist'
   }
 ];
-
 export default function Team() {
   return (
     <section id="team" className="py-24 bg-secondary/30">
