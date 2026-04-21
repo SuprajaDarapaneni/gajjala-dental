@@ -36,18 +36,6 @@ async function startServer() {
     const distPath = path.join(process.cwd(), 'dist');
     const publicPath = path.join(process.cwd(), 'public');
     
-    // Explicitly serve the doctors images from public folder
-    app.use('/doctors', express.static(path.join(publicPath, 'doctors')));
-    
-    // SMART FALLBACK: If someone asks for a doctor image at root (due to old cache), serve it from doctors folder
-    const doctorImages = ['parameswara', 'swetha', 'rajasekhar'];
-    app.get('/:img.jpeg', (req, res, next) => {
-      if (doctorImages.includes(req.params.img)) {
-        return res.sendFile(path.join(publicPath, 'doctors', `${req.params.img}.jpeg`));
-      }
-      next();
-    });
-    
     // Serve dist folder first
     app.use(express.static(distPath));
     // Fallback to public folder
