@@ -71,8 +71,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="pt-8 border-t border-primary/10 text-center text-primary/40 text-sm font-medium">
-          <p>© {new Date().getFullYear()} Gajjala Multispeciality Dental Hospital. All rights reserved.</p>
+        <div className="pt-8 border-t border-primary/10 text-center space-y-2">
+          <p className="text-primary/40 text-sm font-medium">
+            © {new Date().getFullYear()} Gajjala Multispeciality Dental Hospital. All rights reserved.
+          </p>
+          <p className="text-primary/30 text-xs font-medium uppercase tracking-wider">
+            Developed and Designed by{' '}
+            <a 
+              href="https://exordiainnovation.com" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-primary transition-colors duration-300"
+            >
+              Exordia Innovation Pvt Ltd
+            </a>
+          </p>
         </div>
       </div>
     </footer>
