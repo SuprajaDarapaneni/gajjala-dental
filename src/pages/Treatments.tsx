@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import facialImg from '@/assets/facial surgery.png';
 import periocareImg from '@/assets/periocare.jpeg';
 import orthodontImg from '@/assets/orthodont.jpeg';
+import teethwhitenImg from '@/assets/teeth whiten.png';
 
 import { 
   Stethoscope, 
@@ -57,7 +58,7 @@ const allTreatments = [
     title: 'Teeth Whitening',
     description: 'Advanced professional whitening systems to remove deep stains and brighten your smile.',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop',
+    image: teethwhitenImg, // Use the imported variable
     details: ['In-office Laser Whitening', 'Home Whitening Kits', 'Internal Bleaching']
   }
 ];

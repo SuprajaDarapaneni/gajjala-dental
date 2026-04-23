@@ -1,5 +1,8 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
+import facialImg from '@/assets/facial surgery.png';
+import periocareImg from '@/assets/periocare.jpeg';
+import orthodontImg from '@/assets/orthodont.jpeg';
 import { 
   Stethoscope, 
   ShieldCheck, 
@@ -10,50 +13,57 @@ import {
   ChevronRight
 } from 'lucide-react';
 
+ 
 const services = [
   {
     title: 'Facial Surgery',
-    description: 'Transform your look with our expert maxillofacial surgeons.',
+    description: 'Transform your look with our expert maxillofacial surgeons specializing in jaw and trauma care.',
     icon: Zap,
-    color: 'bg-primary/5 text-primary'
-  },
-  {
-    title: 'Dental Implants',
-    description: 'Permanent solution for missing teeth with natural-looking results.',
-    icon: Stethoscope,
+    image: facialImg, // Local Import
     color: 'bg-primary/5 text-primary'
   },
   {
     title: 'Periocare',
     description: 'Comprehensive gum health management focusing on disease prevention and advanced laser therapy.',
-    icon: Smile,
+    icon: HeartPulse,
+    image: periocareImg, // Local Import
+    color: 'bg-primary/5 text-primary'
+  },
+  {
+    title: 'Dental Implants',
+    description: 'Permanent solution for missing teeth with natural-looking results and titanium strength.',
+    icon: Stethoscope,
+    image: 'https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=1974&auto=format&fit=crop',
     color: 'bg-primary/5 text-primary'
   },
   {
     title: 'Root Canal',
-    description: 'Advanced endodontic treatment to save your natural teeth.',
+    description: 'Advanced endodontic treatment to save your natural teeth with painless precision.',
     icon: Activity,
-    color: 'bg-primary/5 text-primary'
-  },
-  {
-    title: 'Teeth Whitening',
-    description: 'Professional whitening for a brighter, more confident smile.',
-    icon: Sparkles,
+    image: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop',
     color: 'bg-primary/5 text-primary'
   },
   {
     title: 'Orthodontics',
-    description: 'Braces and clear aligners for perfect teeth alignment.',
+    description: 'Braces and clear aligners for perfect teeth alignment and a healthier bite.',
     icon: ShieldCheck,
+    image: orthodontImg, // Local Import
+    color: 'bg-primary/5 text-primary'
+  },
+  {
+    title: 'Teeth Whitening',
+    description: 'Professional whitening systems for a brighter, more confident and radiant smile.',
+    icon: Sparkles,
+    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop',
     color: 'bg-primary/5 text-primary'
   },
   {
     title: 'Pediatric Dentistry',
-    description: 'Specialized dental care for children in a friendly environment.',
-    icon: Smile,
+    description: 'Specialized dental care for children in a friendly, comfortable, and warm environment.',
+    icon: BabyIcon,
+    image: 'https://images.unsplash.com/photo-1588776814222-480fc2323fdd?q=80&w=2070&auto=format&fit=crop',
     color: 'bg-primary/5 text-primary'
   },
-   
 ];
 
 export default function Services() {
