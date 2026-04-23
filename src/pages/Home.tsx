@@ -7,6 +7,8 @@ import { Star, Quote, Shield, Zap, Microscope, Activity } from 'lucide-react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
+import parameswara from '@/assets/parameswara.jpeg';
+import swetha from '@/assets/swetha.jpeg';
 <section className="py-32 bg-white">
         <div className="container mx-auto px-4">
           {/* Heading */}
