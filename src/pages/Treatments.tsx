@@ -16,6 +16,7 @@ import {
   ShieldCheck, 
   Zap,
   HeartPulse
+  
 } from 'lucide-react';
 
 const allTreatments = [

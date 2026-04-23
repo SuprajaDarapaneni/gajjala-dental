@@ -10,7 +10,8 @@ import {
   Smile, 
   Activity, 
   Zap,
-  ChevronRight
+  ChevronRight,
+  HeartPulse
 } from 'lucide-react';
 
  
