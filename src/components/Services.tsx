@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import facialImg from '@/assets/facialsurgery.png';
 import periocareImg from '@/assets/periocare.jpeg';
 import orthodontImg from '@/assets/orthodont.jpeg';
+import teethwhitenImg from '@/assets/teeth whiten.png';
 import { 
   Stethoscope, 
   ShieldCheck, 
@@ -55,7 +56,7 @@ const services = [
     title: 'Teeth Whitening',
     description: 'Professional whitening systems for a brighter, more confident and radiant smile.',
     icon: Sparkles,
-    image: 'https://images.unsplash.com/photo-1551076805-e1869033e561?q=80&w=2070&auto=format&fit=crop',
+    image: teethwhitenImg,
     color: 'bg-primary/5 text-primary'
   },
   {
