@@ -11,6 +11,7 @@ import {
   Activity, 
   Zap,
   ChevronRight,
+  BabyIcon,
   HeartPulse
 } from 'lucide-react';
 
