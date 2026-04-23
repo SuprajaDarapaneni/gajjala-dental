@@ -63,7 +63,7 @@ const services = [
     title: 'Pediatric Dentistry',
     description: 'Specialized dental care for children in a friendly, comfortable, and warm environment.',
     icon: BabyIcon,
-    image: 'https://images.unsplash.com/photo-1588776814222-480fc2323fdd?q=80&w=2070&auto=format&fit=crop',
+     
     color: 'bg-primary/5 text-primary'
   },
 ];
