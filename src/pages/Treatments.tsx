@@ -4,7 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 
 // Import local assets correctly
-import facialImg from '@/assets/facial surgery.png';
+import facialImg from '@/assets/facialsurgery.png';
 import periocareImg from '@/assets/periocare.jpeg';
 import orthodontImg from '@/assets/orthodont.jpeg';
 import teethwhitenImg from '@/assets/teeth whiten.png';
