@@ -12,9 +12,21 @@ import {
 
 const services = [
   {
+    title: 'Cosmetic Surgery',
+    description: 'Transform your look with our expert maxillofacial surgeons.',
+    icon: Zap,
+    color: 'bg-primary/5 text-primary'
+  },
+  {
     title: 'Dental Implants',
     description: 'Permanent solution for missing teeth with natural-looking results.',
     icon: Stethoscope,
+    color: 'bg-primary/5 text-primary'
+  },
+  {
+    title: 'Periocare',
+    description: 'Comprehensive gum health management focusing on disease prevention and advanced laser therapy.',
+    icon: Smile,
     color: 'bg-primary/5 text-primary'
   },
   {
@@ -41,12 +53,7 @@ const services = [
     icon: Smile,
     color: 'bg-primary/5 text-primary'
   },
-  {
-    title: 'Cosmetic Surgery',
-    description: 'Transform your look with our expert maxillofacial surgeons.',
-    icon: Zap,
-    color: 'bg-primary/5 text-primary'
-  }
+   
 ];
 
 export default function Services() {
