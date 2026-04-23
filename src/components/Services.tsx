@@ -1,6 +1,6 @@
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'react-router-dom';
-import facialImg from '@/assets/facialsurgery.png';
+import facialImg from '@/assets/facial surgery.png';
 import periocareImg from '@/assets/periocare.jpeg';
 import orthodontImg from '@/assets/orthodont.jpeg';
 import teethwhitenImg from '@/assets/teeth whiten.png';
