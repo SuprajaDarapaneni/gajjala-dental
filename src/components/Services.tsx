@@ -12,7 +12,7 @@ import {
 
 const services = [
   {
-    title: 'Cosmetic Surgery',
+    title: 'Facial Surgery',
     description: 'Transform your look with our expert maxillofacial surgeons.',
     icon: Zap,
     color: 'bg-primary/5 text-primary'

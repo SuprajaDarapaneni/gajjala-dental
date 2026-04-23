@@ -19,7 +19,7 @@ const allTreatments = [
     title: 'Facial Surgery (Maxillofacial)',
     description: 'Specialized surgery for complex dental issues, jaw corrections, and facial trauma restoration.',
     icon: Zap,
-    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop',
+    image: '/src/assets/facial surgery.png', // ✅ updated
     details: ['Wisdom Tooth Extraction', 'Jaw Realignment', 'Cleft Lip & Palate Correction']
   },
   {
@@ -40,7 +40,7 @@ const allTreatments = [
     title: 'Periocare',
     description: 'Comprehensive gum health management focusing on disease prevention and advanced laser therapy.',
     icon: HeartPulse,
-    image: 'https://images.unsplash.com/photo-1598256989800-fe5f95da9787?q=80&w=2070&auto=format&fit=crop',
+    image: '/src/assets/periocare.jpeg', // ✅ updated
     details: ['Laser Gum Treatment', 'Deep Scaling & Root Planing', 'Gum Contouring']
   },
   {
@@ -54,7 +54,7 @@ const allTreatments = [
     title: 'Orthodontics',
     description: 'Correcting misaligned teeth and bite issues for children and adults using modern aligners.',
     icon: ShieldCheck,
-    image: 'https://images.unsplash.com/photo-1516062423079-7ca13cdc7f5a?q=80&w=2083&auto=format&fit=crop',
+    image: '/src/assets/orthodont.jpeg', // ✅ updated
     details: ['Metal & Ceramic Braces', 'Invisalign Clear Aligners', 'Lingual Braces']
   }
 ];
