@@ -156,10 +156,10 @@ export default function About() {
               </div>
 
               <h3 className="text-3xl font-bold italic text-primary mb-2">
-                Dr. Parameshwara Reddy
+                Dr. Parameshwara Reddy BDS
               </h3>
               <p className="text-accent uppercase tracking-[0.2em] text-xs mb-6 font-bold">
-                Founder & Chairman
+                 Founder & Chairman
               </p>
               <p className="text-primary/60 leading-relaxed font-light max-w-md mx-auto">
                 With a vision to bring world-class dental care to Narasaraopet, Dr. Parameshwara Reddy founded Gajjala Dental in 2014. His expertise and leadership have shaped the clinic into a trusted name in advanced treatments.
@@ -184,10 +184,10 @@ export default function About() {
               </div>
 
               <h3 className="text-3xl font-bold italic text-primary mb-2">
-                Dr. Swetha
+                Dr. Swetha MDS
               </h3>
               <p className="text-accent uppercase tracking-[0.2em] text-xs mb-6 font-bold">
-                Co-Founder & Clinical Director
+                Co-Founder & Maxillofacial Surgeon
               </p>
               <p className="text-primary/60 leading-relaxed font-light max-w-md mx-auto">
                 Dr. Swetha plays a key role in delivering patient-centric care with precision and empathy. Her focus on modern techniques ensures every treatment experience is seamless and effective.
