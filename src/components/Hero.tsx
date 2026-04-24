@@ -1,114 +1,176 @@
+import { useState, useEffect } from 'react';
+import { Phone, Menu, Clock, MapPin, Stethoscope, ChevronDown, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { motion } from 'motion/react';
-import { ArrowRight, Sparkles, MapPin } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Link, useLocation } from 'react-router-dom';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
-export default function Hero() {
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 40);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const navLinks = [
+    { name: 'Home', href: '/' },
+    { name: 'About', href: '/about' },
+    { name: 'Equipment', href: '/equipment' },
+    { name: 'Booking', href: '/booking' },
+    { name: 'FAQ', href: '/faq' },
+    { name: 'Contact', href: '/contact' },
+  ];
+
+  const treatments = [
+    { title: 'Facial Surgery', href: '/treatments' },
+    { title: 'Dental Implants', href: '/treatments' },
+    { title: 'Root Canal', href: '/treatments' },
+    { title: 'Orthodontics', href: '/treatments' },
+    { title: 'Periocare', href: '/treatments' },
+  ];
+
   return (
-    <section className="relative min-h-[95vh] flex items-center pt-24 overflow-hidden bg-white">
-      {/* Abstract Background Elements */}
-      <div className="absolute top-0 right-0 w-2/3 h-full bg-secondary/50 -skew-x-12 translate-x-32 z-0 hidden lg:block"></div>
-      <div className="absolute top-1/4 left-0 w-32 h-32 bg-accent/10 rounded-full blur-3xl"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-7"
-          >
-            <div className="flex items-center gap-3 mb-8">
-              <div className="w-12 h-[1px] bg-primary/30"></div>
-              <span className="text-primary font-bold uppercase tracking-[0.3em] text-xs">Since 2014 • Trusted Dental Care</span>
+    <header className="fixed top-0 left-0 right-0 z-50">
+      {/* Upper Info Bar - NOW STATIC (Removed isScrolled logic) */}
+      <div className="hidden lg:block bg-primary text-white/80 py-2 border-b border-white/10">
+        <div className="container mx-auto px-4 flex justify-between items-center text-[10px] uppercase tracking-[0.2em] font-bold">
+          <div className="flex gap-8">
+            <div className="flex items-center gap-2">
+              <Clock className="w-3 h-3 text-accent" />
+              <span>9 AM - 8 PM Daily</span>
             </div>
-            
-            <h1 className="text-6xl md:text-8xl font-bold text-slate-900 leading-[1.1] mb-10">
-              Trusted Dental Hospital <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">In Narasaraopet</span>
-            </h1>
-            
-            <p className="text-slate-500 text-xl md:text-2xl mb-12 leading-relaxed max-w-xl font-medium">
-              We provide painless dental treatments with advanced machines and experienced doctors for your healthy smile.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row gap-6">
-              <Button size="lg" className="h-20 px-10 text-lg rounded-2xl group bg-primary hover:bg-primary/90 text-white shadow-xl shadow-primary/20" render={<Link to="/contact" />}>
-                Book Appointment <ArrowRight className="ml-3 w-5 h-5 group-hover:translate-x-2 transition-transform" />
-              </Button>
-              <Button size="lg" variant="outline" className="h-20 px-10 text-lg rounded-2xl border-2 border-slate-100 hover:border-primary text-primary hover:bg-white" render={<Link to="/treatments" />}>
-                View All Services
-              </Button>
+            <div className="flex items-center gap-2">
+              <MapPin className="w-3 h-3 text-accent" />
+              <span>Narasaraopet & Sattenepalli</span>
             </div>
-
-            <div className="mt-16 flex items-center gap-8 lg:gap-12">
-              <div className="flex -space-x-4">
-                {[1, 2, 3, 4].map(i => (
-                  <div key={i} className="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-slate-100">
-                    <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Patient" />
-                  </div>
-                ))}
-              </div>
-              <div>
-                <p className="font-bold text-slate-900 text-lg">10,000+</p>
-                <p className="text-slate-400 text-sm font-bold uppercase tracking-widest">Successful Smiles</p>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Right Image Container */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="lg:col-span-5 relative"
-          >
-            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] aspect-[4/5]">
-              <img 
-                src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=1000"
-                alt="Modern Surgery Room"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent"></div>
-            </div>
-
-            {/* Floating Achievement */}
-            <motion.div 
-              initial={{ x: 50, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.6 }}
-              className="absolute -right-8 top-1/2 -translate-y-1/2 bg-white p-8 rounded-[2rem] shadow-2xl z-20 border border-slate-50 hidden md:block"
-            >
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-accent/20 rounded-2xl flex items-center justify-center text-primary">
-                  <Sparkles className="w-7 h-7" />
-                </div>
-                <div>
-                  <p className="font-bold text-slate-900 text-xl tracking-tight leading-none mb-1">Advanced Care</p>
-                  <p className="text-slate-400 text-xs font-bold uppercase tracking-widest">Since 2014</p>
-                </div>
-              </div>
-              <div className="h-2 w-full bg-slate-100 rounded-full overflow-hidden">
-                <div className="h-full bg-primary w-4/5"></div>
-              </div>
-            </motion.div>
-
-            {/* Experience Tag */}
-            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-primary text-white py-6 px-10 rounded-3xl shadow-2xl z-20 flex items-center gap-6 whitespace-nowrap">
-              <span className="text-4xl font-bold">10+</span>
-              <div className="w-px h-8 bg-white/20"></div>
-              <div>
-                <p className="font-bold leading-none">Years Service</p>
-                <p className="text-white/60 text-xs mt-1">In Narasaraopet</p>
-              </div>
-            </div>
-          </motion.div>
-
+          </div>
+          <div className="flex gap-6">
+            <a href="mailto:info@gajjala.com" className="hover:text-accent transition-colors flex items-center gap-2">
+              <Mail className="w-3 h-3 text-accent" />
+              <span>info@gajjala.com</span>
+            </a>
+            <a href="tel:8897222959" className="hover:text-accent transition-colors flex items-center gap-2">
+              <Phone className="w-3 h-3 text-accent" />
+              <span>+91 88972 22959</span>
+            </a>
+          </div>
         </div>
       </div>
-    </section>
+
+      {/* Main Navigation */}
+      <div className={`transition-all duration-500 ${
+        isScrolled 
+          ? 'bg-white/95 backdrop-blur-xl py-3 border-b border-slate-200 shadow-sm' 
+          : 'bg-transparent py-6'
+      }`}>
+        <div className="container mx-auto px-4 flex items-center justify-between">
+          
+          <Link to="/" className="flex items-center gap-4 group">
+            <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-all duration-500 shadow-lg ${
+              isScrolled ? 'bg-primary text-accent scale-90' : 'bg-accent text-primary group-hover:rotate-[10deg]'
+            }`}>
+              <Stethoscope className="w-6 h-6" />
+            </div>
+            <div className="flex flex-col">
+              <span className={`font-heading font-extrabold text-lg md:text-xl leading-none tracking-tight transition-colors duration-500 ${
+                isScrolled ? 'text-primary' : (isHomePage ? 'text-primary' : 'text-white')
+              }`}>
+                GAJJALA <span className="text-accent italic">DENTAL</span>
+              </span>
+              <span className={`text-[9px] uppercase tracking-[0.4em] font-black mt-1 ${
+                isScrolled ? 'text-slate-400' : 'text-accent/80'
+              }`}>
+                Multispeciality Hospital
+              </span>
+            </div>
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-10">
+            {navLinks.slice(0, 2).map((link) => (
+              <Link 
+                key={link.name} 
+                to={link.href} 
+                className={`text-[11px] uppercase tracking-[0.2em] font-bold transition-all hover:text-accent relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-accent hover:after:w-full after:transition-all ${
+                  isScrolled ? 'text-primary' : (isHomePage ? 'text-primary' : 'text-white')
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            
+            <DropdownMenu>
+              <DropdownMenuTrigger className={`flex items-center gap-1.5 text-[11px] uppercase tracking-[0.2em] font-bold outline-none transition-all hover:text-accent ${
+                isScrolled ? 'text-primary' : (isHomePage ? 'text-primary' : 'text-white')
+              }`}>
+                Treatments <ChevronDown className="w-3 h-3 opacity-50" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="center" className="bg-white/95 backdrop-blur-md border-slate-200 p-2 min-w-[220px] shadow-2xl rounded-xl">
+                {treatments.map((item) => (
+                  <DropdownMenuItem key={item.title} asChild>
+                    <Link to={item.href} className="w-full px-4 py-3 text-[10px] font-bold uppercase tracking-widest text-primary/70 hover:bg-slate-50 hover:text-primary transition-all rounded-lg cursor-pointer">
+                      {item.title}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {navLinks.slice(2).map((link) => (
+              <Link 
+                key={link.name} 
+                to={link.href} 
+                className={`text-[11px] uppercase tracking-[0.2em] font-bold transition-all hover:text-accent relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-0.5 after:bg-accent hover:after:w-full after:transition-all ${
+                  isScrolled ? 'text-primary' : (isHomePage ? 'text-primary' : 'text-white')
+                }`}
+              >
+                {link.name}
+              </Link>
+            ))}
+            
+            <Button asChild className="rounded-full px-8 font-bold uppercase tracking-widest text-[10px] bg-primary text-white hover:bg-primary/90 shadow-xl shadow-primary/20 hover:scale-105 transition-all duration-300">
+              <Link to="/booking">Book Appointment</Link>
+            </Button>
+          </nav>
+
+          <div className="lg:hidden flex items-center gap-3">
+            <a href="tel:8897222959" className="w-10 h-10 bg-accent text-primary rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform">
+              <Phone className="w-4 h-4" />
+            </a>
+            <Sheet>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className={isScrolled || isHomePage ? 'text-primary' : 'text-white'}>
+                  <Menu className="w-7 h-7" />
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="w-full sm:w-[400px] bg-primary text-white border-none p-0">
+                <div className="flex flex-col h-full p-8">
+                  <div className="flex justify-between items-center mt-4">
+                    <span className="text-accent font-black tracking-widest text-xl italic">MENU</span>
+                  </div>
+                  <nav className="flex flex-col gap-6 mt-16">
+                    {navLinks.map((link) => (
+                      <Link key={link.name} to={link.href} className="text-4xl font-extrabold italic hover:text-accent transition-all hover:translate-x-4 inline-block">
+                        {link.name}
+                      </Link>
+                    ))}
+                  </nav>
+                </div>
+              </SheetContent>
+            </Sheet>
+          </div>
+        </div>
+      </div>
+    </header>
   );
 }
